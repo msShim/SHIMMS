@@ -1,0 +1,58 @@
+.nav.navbar.navbar-default.navbar-fixed-top
+  .container
+    .navbar-header
+      button.navbar-toggle(type="button" data-toggle="collapse" data-target="#myNavbar")
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href="/") CafeGo
+    #myNavbar.collapse.navbar-collapse
+      ul.nav.navbar-nav.navbar-left
+        li
+          a(href="/orders") 주문 현황
+        li
+          a(href="/scores") 평점 보기
+        li.dropdown
+          a.dropdown-toggle(href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false") 상품관리
+            b.icon-angle-down
+          ul.dropdown-menu
+            li
+              a(href="/products") 상품 리스트 보기
+            li
+              a(href="/products/edit") 상품 추가
+        //- if (currentUser) 
+        //-   li.dropdown
+        //-     a.dropdown-toggle(href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false") 목록
+        //-       b.icon-angle-down
+        //-     ul.dropdown-menu
+        //-       li
+        //-         a(href="/survey/new") 새 설문지 만들기
+        //-       li
+        //-         a(href="/survey/edit") 설문지 이어 만들기
+        //-       li
+        //-         a(href="/survey/quest") 완성된 설문지 보기
+        //-       li
+        //-         a(href="/survey/complete") 설문지 결과 보기
+        //-   if (currentUser.root)
+        //-     li.dropdown
+        //-       a.dropdown-toggle(href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false") 관리
+        //-         b.icon-angle-down
+        //-       ul.dropdown-menu
+        //-         li
+        //-           a(href="/users/") 회원 목록 관리
+      ul.nav.navbar-nav.navbar-right
+        li
+          a(href='') Signin
+        li
+          a(href='') Signup
+        //- if (!currentUser) 
+        //-   li
+        //-     a(href='/signin') Signin
+        //-   li
+        //-     a(href='/users/new') Signup
+        //- else
+        //-   li
+        //-     a(href='/users/#{currentUser._id}') Profile
+        //-   li
+        //-     a(href='/signout') Signout
+p  

@@ -1,0 +1,58 @@
+extends ../layout
+
+block content
+  .container
+    h2 주문 목록
+    .list-group
+      for order, i in orders
+        if i == 0 
+          .list-group-item.flag(href="#")
+            span.spanRight.glyphicon.glyphicon-ok
+            span.spanLeft 
+              h3 
+                | 주문번호 : 
+                span.orderCnt #{order.orderCnt}
+              hr
+            p 고객 번호 : 
+              span.phoneNum #{order.phoneNum}
+            for content in order.contents
+              p #{content.name} : #{content.cnt}개
+            center
+              p 총 금액 : #{order.total}
+              p 예약 시간 : #{moment(order.limitTime).format('YYYY/MM/DD HH:mm')}
+            hr
+            center
+              button.btn.btn-primary.btn-lg.orderCall 호출하기
+              | 
+              button.btn.btn-success.btn-lg.orderSoldOut 판매완료
+              | 
+              button.btn.btn-danger.btn-lg.orderCancel 판매취소
+        else
+          a.list-group-item(href="#" data-toggle="modal" data-target="#orderView#{i}")
+            span.spanRight.glyphicon.glyphicon-ok
+            span.spanLeft 주문번호 : #{order.orderCnt}
+          .modal.fade.flag(role="dialog" id="orderView#{i}")
+            .modal-dialog
+              .modal-content
+                .modal-header
+                  button.close(type="button" data-dismiss="modal") &times;
+                  h4.modal-title 
+                    | 주문번호 : 
+                    span.orderCnt #{order.orderCnt}
+                .modal-body
+                  p 고객 번호 : 
+                    span.phoneNum #{order.phoneNum}
+                  for content in order.contents
+                    p #{content.name} : #{content.cnt}개
+                  center
+                    p 총 금액 : #{order.total}
+                    p 예약 시간 : #{moment(order.limitTime).format('YYYY/MM/DD HH:mm')}
+                .modal-footer
+                  center
+                    button.btn.btn-primary.orderCall 호출하기
+                    | 
+                    button.btn.btn-success.orderSoldOut 판매완료
+                    | 
+                    button.btn.btn-danger.orderCancel 판매취소
+    
+    script(type='text/javascript', src='/javascripts/orders.js')

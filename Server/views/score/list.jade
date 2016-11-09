@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+  .container
+    h2 평점 목록
+    hr
+    for score, i in scores
+      .divRight
+        | #{moment(score.createAt).format('YYYY/MM/DD HH:mm')}
+      p 작성자 : #{score.phoneNum}
+      .score 
+        | #{score.score}
+      br 
+      p #{score.text}
+      hr
+      
+    script(type='text/javascript', src='/javascripts/scores.js')

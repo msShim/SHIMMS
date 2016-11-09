@@ -1,0 +1,31 @@
+extends ../layout
+
+block content
+  .container
+    h2 상품 목록
+    table.table.table-bordered
+      thead
+        tr
+          th productID
+          th productNum
+          th category
+          th cafeID
+          th name
+          th price
+          th img
+          th  
+      tbody
+        each product, i in products
+          tr
+            td #{product.productID}
+            td #{product.productNum}
+            td #{product.category}
+            td #{product.cafeID}
+            td #{product.name}
+            td #{product.price}
+            td #{product.img}
+            td 
+              center
+                a.btn.btn-success(href='/products/edit/#{product.productID}') 수정
+                | 
+                a.btn.btn-danger(href='/products/#{product.productID}?_method=DELETE') 삭제

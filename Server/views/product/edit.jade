@@ -1,0 +1,91 @@
+extends ../layout
+
+block content
+  .container
+    if product 
+      h2 상품 수정
+      form(action='/products/edit/#{product.productID}' enctype="multipart/form-data" method="post")
+        .form-group
+          label(for="productNum") productNum(상품번호):
+          input.form-control(type="number" name="productNum" value=product.productNum required) 
+        .form-group
+          label(for="category") category(카테고리):
+          select.form-control(name="category")
+            case product.category
+              when 1
+                option(selected) 커피
+                option 에이드/차
+                option 주스
+                option 더보기
+              when 2
+                option 커피
+                option(selected) 에이드/차
+                option 주스
+                option 더보기
+              when 3
+                option 커피
+                option 에이드/차
+                option(selected) 주스
+                option 더보기
+              when 4
+                option 커피
+                option 에이드/차
+                option 주스
+                option(selected) 더보기
+        .form-group
+          label(for="cafeID") cafeID(카페 구분):
+          select.form-control(name="cafeID")
+            case product.cafeID
+              when 1
+                option(selected) 명지카페
+                option 그라지아1
+                option 그라지아2
+              when 2
+                option 명지카페
+                option(selected) 그라지아1
+                option 그라지아2
+              when 3
+                option 명지카페
+                option 그라지아1
+                option(selected) 그라지아2
+        .form-group
+          label(for="name") name(상품이름):
+          input.form-control(type="text" name="name" value="#{product.name}" required)
+        .form-group
+          label(for="price") price(가격):
+          input.form-control(type="number" name="price" value="#{product.price}" required)
+        .form-group
+          label(for="img") img(사진) [현재사진 : #{product.img}]:
+          input.form-control(type="file" name="file" accept="image/*")
+        button.btn.btn-default(type="submit") Submit
+    else
+      h2 상품 추가
+      form(action='/products/edit' enctype="multipart/form-data" method="post")
+        .form-group
+          label(for="productNum") productNum(상품번호):
+          input.form-control(type="number" name="productNum" required)
+        .form-group
+          label(for="category") category(카테고리):
+          select.form-control(name="category")
+            option 커피
+            option 에이드/차
+            option 주스
+            option 더보기
+        .form-group
+          label(for="cafeID") cafeID(카페 구분):
+          select.form-control(name="cafeID")
+            option 명지카페
+            option 그라지아1
+            option 그라지아2
+        .form-group
+          label(for="name") name(상품이름):
+          input.form-control(type="text" name="name" required)
+        .form-group
+          label(for="price") price(가격):
+          input.form-control(type="number" name="price" required)
+        .form-group
+          label(for="img") img(사진):
+          input.form-control(type="file" name="file" accept="image/*")
+        button.btn.btn-default(type="submit") Submit
+
+    
