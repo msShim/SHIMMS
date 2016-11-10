@@ -24,6 +24,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("try connect")
         return true
     }
+    func switchPreViewControllers() {
+        
+        // switch root view controllers
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let nav = storyboard.instantiateViewController(withIdentifier: "preview")
+        
+        self.window?.rootViewController = nav
+        
+    }
+    func switchStartViewControllers() {
+        
+        // switch root view controllers
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let nav = storyboard.instantiateViewController(withIdentifier: "start")
+        
+        self.window?.rootViewController = nav
+        
+    }
     
     func switchViewControllers() {
         

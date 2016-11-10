@@ -1,30 +1,32 @@
 //
-//  CoffeeSelectViewController.swift
-//  Demo35-UIPageControl
+//  AdeMViewController.swift
+//  CafeGo
 //
-//  Created by 남조선명지대학 on 2016. 10. 9..
-//  Copyright © 2016년 PrashantKumar Mangukiya. All rights reserved.
+//  Created by 5407-35 on 2016. 11. 10..
+//  Copyright © 2016년 SMS. All rights reserved.
 //
 
 import UIKit
 
-class CoffeeSelectViewController: UIViewController {
-
-  
-
+class AdeMViewController: UIViewController {
     
-    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    @IBAction func Back(_ sender: AnyObject) {
+        appDelegate.switchStartViewControllers()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        }
+
+        // Do any additional setup after loading the view.
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-     
-}
+
     /*
     // MARK: - Navigation
 
@@ -34,3 +36,5 @@ class CoffeeSelectViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
+}

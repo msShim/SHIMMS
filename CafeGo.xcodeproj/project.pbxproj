@@ -15,6 +15,8 @@
 		7D2483611DC4FA3D00711C65 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2483601DC4FA3D00711C65 /* MainViewController.swift */; };
 		7D7142F21DC6978600A2BB22 /* MJuiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7142F11DC6978600A2BB22 /* MJuiceViewController.swift */; };
 		7D7142F41DC697A000A2BB22 /* MTeaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7142F31DC697A000A2BB22 /* MTeaViewController.swift */; };
+		7D7DE9C71DD4019700E8A05C /* JuiceMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7DE9C61DD4019700E8A05C /* JuiceMViewController.swift */; };
+		7D7DE9C91DD401E900E8A05C /* AdeMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7DE9C81DD401E900E8A05C /* AdeMViewController.swift */; };
 		7D933C711DA728A300736B46 /* redblackTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D933C701DA728A300736B46 /* redblackTree.swift */; };
 		7D933C731DA8C9B600736B46 /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D933C721DA8C9B600736B46 /* Function.swift */; };
 		7D933C981DA8F1F700736B46 /* coffee1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7D933C971DA8F1F700736B46 /* coffee1.jpeg */; };
@@ -34,7 +36,7 @@
 		A1C6F6081DA3BEC900B9D4FE /* CafeGo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A1C6F6061DA3BEC900B9D4FE /* CafeGo.xcdatamodeld */; };
 		A1C6F60D1DA3BEC900B9D4FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C6F60B1DA3BEC900B9D4FE /* LaunchScreen.storyboard */; };
 		A1C6F6151DA3C29100B9D4FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C6F6141DA3C29100B9D4FE /* ViewController.swift */; };
-		A1EF48261DAD1025004E68BB /* CoffeeSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EF48221DAD1025004E68BB /* CoffeeSelectViewController.swift */; };
+		A1EF48261DAD1025004E68BB /* CoffeeMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EF48221DAD1025004E68BB /* CoffeeMViewController.swift */; };
 		A1EF48271DAD1025004E68BB /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EF48231DAD1025004E68BB /* MoreViewController.swift */; };
 		A1EF48281DAD1025004E68BB /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EF48241DAD1025004E68BB /* OrderViewController.swift */; };
 		A1EF48291DAD1025004E68BB /* SelectedOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EF48251DAD1025004E68BB /* SelectedOrderTableViewCell.swift */; };
@@ -54,6 +56,8 @@
 		7D2483601DC4FA3D00711C65 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		7D7142F11DC6978600A2BB22 /* MJuiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJuiceViewController.swift; sourceTree = "<group>"; };
 		7D7142F31DC697A000A2BB22 /* MTeaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTeaViewController.swift; sourceTree = "<group>"; };
+		7D7DE9C61DD4019700E8A05C /* JuiceMViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JuiceMViewController.swift; sourceTree = "<group>"; };
+		7D7DE9C81DD401E900E8A05C /* AdeMViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdeMViewController.swift; sourceTree = "<group>"; };
 		7D933C701DA728A300736B46 /* redblackTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = redblackTree.swift; sourceTree = "<group>"; };
 		7D933C721DA8C9B600736B46 /* Function.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Function.swift; sourceTree = "<group>"; };
 		7D933C971DA8F1F700736B46 /* coffee1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = coffee1.jpeg; sourceTree = "<group>"; };
@@ -75,7 +79,7 @@
 		A1C6F60C1DA3BEC900B9D4FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A1C6F60E1DA3BEC900B9D4FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1C6F6141DA3C29100B9D4FE /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A1EF48221DAD1025004E68BB /* CoffeeSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoffeeSelectViewController.swift; sourceTree = "<group>"; };
+		A1EF48221DAD1025004E68BB /* CoffeeMViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoffeeMViewController.swift; sourceTree = "<group>"; };
 		A1EF48231DAD1025004E68BB /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		A1EF48241DAD1025004E68BB /* OrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		A1EF48251DAD1025004E68BB /* SelectedOrderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedOrderTableViewCell.swift; sourceTree = "<group>"; };
@@ -116,6 +120,69 @@
 			name = Lib;
 			sourceTree = "<group>";
 		};
+		7D7DE9C31DD4009700E8A05C /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				7D7DE9CC1DD4025800E8A05C /* Order */,
+				7D7DE9CB1DD4025500E8A05C /* reserv */,
+				7D7DE9CA1DD4024000E8A05C /* ShowMenu */,
+				A1EF48251DAD1025004E68BB /* SelectedOrderTableViewCell.swift */,
+				7DDAF7B41DC5E52400D94ABA /* TableViewCell.swift */,
+				A1EF48231DAD1025004E68BB /* MoreViewController.swift */,
+				7DDAF7BE1DC6379200D94ABA /* BeforeReserveViewController.swift */,
+				7D933CBD1DAE577000736B46 /* CodeViewController.swift */,
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
+		7D7DE9C41DD4009A00E8A05C /* New Group1 */ = {
+			isa = PBXGroup;
+			children = (
+				7D2483601DC4FA3D00711C65 /* MainViewController.swift */,
+				A1EF48221DAD1025004E68BB /* CoffeeMViewController.swift */,
+				7D7DE9C81DD401E900E8A05C /* AdeMViewController.swift */,
+				7D7DE9C61DD4019700E8A05C /* JuiceMViewController.swift */,
+			);
+			name = "New Group1";
+			sourceTree = "<group>";
+		};
+		7D7DE9C51DD4009C00E8A05C /* New Group2 */ = {
+			isa = PBXGroup;
+			children = (
+				A1C6F6141DA3C29100B9D4FE /* ViewController.swift */,
+				830C7BE51DC6E11000E18DF8 /* PreViewController.swift */,
+				7D24835E1DC4D8BA00711C65 /* VerifViewController.swift */,
+			);
+			name = "New Group2";
+			sourceTree = "<group>";
+		};
+		7D7DE9CA1DD4024000E8A05C /* ShowMenu */ = {
+			isa = PBXGroup;
+			children = (
+				A1EF482A1DAD11C6004E68BB /* MCafeViewController.swift */,
+				7D7142F11DC6978600A2BB22 /* MJuiceViewController.swift */,
+				7D7142F31DC697A000A2BB22 /* MTeaViewController.swift */,
+			);
+			name = ShowMenu;
+			sourceTree = "<group>";
+		};
+		7D7DE9CB1DD4025500E8A05C /* reserv */ = {
+			isa = PBXGroup;
+			children = (
+				7DDAF7B61DC5E66A00D94ABA /* ReservationViewController.swift */,
+				7DDAF7B81DC5E68C00D94ABA /* ReservationTableViewCell.swift */,
+			);
+			name = reserv;
+			sourceTree = "<group>";
+		};
+		7D7DE9CC1DD4025800E8A05C /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				A1EF48241DAD1025004E68BB /* OrderViewController.swift */,
+			);
+			name = Order;
+			sourceTree = "<group>";
+		};
 		7D933C991DA8F92900736B46 /* model */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,26 +200,13 @@
 		7D933CA91DADC03000736B46 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				7D7DE9C51DD4009C00E8A05C /* New Group2 */,
+				7D7DE9C41DD4009A00E8A05C /* New Group1 */,
+				7D7DE9C31DD4009700E8A05C /* New Group */,
 				A1EF482C1DAD1241004E68BB /* Main.storyboard */,
 				A1C6F60B1DA3BEC900B9D4FE /* LaunchScreen.storyboard */,
 				A1C6F5FF1DA3BEC900B9D4FE /* AppDelegate.swift */,
-				A1C6F6141DA3C29100B9D4FE /* ViewController.swift */,
-				7D24835E1DC4D8BA00711C65 /* VerifViewController.swift */,
-				A1EF48241DAD1025004E68BB /* OrderViewController.swift */,
-				A1EF48251DAD1025004E68BB /* SelectedOrderTableViewCell.swift */,
-				A1EF48231DAD1025004E68BB /* MoreViewController.swift */,
-				A1EF48221DAD1025004E68BB /* CoffeeSelectViewController.swift */,
-				7D933CBD1DAE577000736B46 /* CodeViewController.swift */,
-				7D2483601DC4FA3D00711C65 /* MainViewController.swift */,
-				7DDAF7B41DC5E52400D94ABA /* TableViewCell.swift */,
-				7DDAF7B61DC5E66A00D94ABA /* ReservationViewController.swift */,
-				7DDAF7B81DC5E68C00D94ABA /* ReservationTableViewCell.swift */,
-				7DDAF7BE1DC6379200D94ABA /* BeforeReserveViewController.swift */,
 				7D18CA2A1DC662F8002D41DD /* SWRViewController.swift */,
-				A1EF482A1DAD11C6004E68BB /* MCafeViewController.swift */,
-				7D7142F11DC6978600A2BB22 /* MJuiceViewController.swift */,
-				7D7142F31DC697A000A2BB22 /* MTeaViewController.swift */,
-				830C7BE51DC6E11000E18DF8 /* PreViewController.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -338,7 +392,7 @@
 				7DDAF7BF1DC6379300D94ABA /* BeforeReserveViewController.swift in Sources */,
 				830C7BE61DC6E11000E18DF8 /* PreViewController.swift in Sources */,
 				7D24835F1DC4D8BA00711C65 /* VerifViewController.swift in Sources */,
-				A1EF48261DAD1025004E68BB /* CoffeeSelectViewController.swift in Sources */,
+				A1EF48261DAD1025004E68BB /* CoffeeMViewController.swift in Sources */,
 				7D18CA291DC659DA002D41DD /* SWRevealViewController.m in Sources */,
 				830ACED21DBA3ED4001C72BB /* ServerConnector.swift in Sources */,
 				A1C6F6001DA3BEC900B9D4FE /* AppDelegate.swift in Sources */,
@@ -356,12 +410,14 @@
 				7DDAF7B91DC5E68C00D94ABA /* ReservationTableViewCell.swift in Sources */,
 				A1EF482B1DAD11C6004E68BB /* MCafeViewController.swift in Sources */,
 				7DDAF7B71DC5E66A00D94ABA /* ReservationViewController.swift in Sources */,
+				7D7DE9C91DD401E900E8A05C /* AdeMViewController.swift in Sources */,
 				7D933C731DA8C9B600736B46 /* Function.swift in Sources */,
 				7D2483611DC4FA3D00711C65 /* MainViewController.swift in Sources */,
 				A1EF48291DAD1025004E68BB /* SelectedOrderTableViewCell.swift in Sources */,
 				7D18CA2B1DC662F8002D41DD /* SWRViewController.swift in Sources */,
 				7D7142F21DC6978600A2BB22 /* MJuiceViewController.swift in Sources */,
 				A1EF48281DAD1025004E68BB /* OrderViewController.swift in Sources */,
+				7D7DE9C71DD4019700E8A05C /* JuiceMViewController.swift in Sources */,
 				7DDAF7BD1DC5E83800D94ABA /* OrderList+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

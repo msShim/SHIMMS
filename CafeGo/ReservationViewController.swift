@@ -20,6 +20,8 @@ UITableViewDelegate{
             status.initQuantity(order: "")
             status.updateOrderNumber(order: 0)
             status.updateOrderBook(book: false)
+            orderNumber.text = ""
+            
         }
         self.viewDidLoad()
     }
@@ -32,10 +34,13 @@ UITableViewDelegate{
     var listText : String = ""
     let list : OrderListService = OrderListService()
     
-    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     var deletePlanetIndexPath: IndexPath? = nil
     
+    @IBAction func Back(_ sender: AnyObject) {
+        appDelegate.switchStartViewControllers()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
        

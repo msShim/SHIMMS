@@ -37,9 +37,9 @@ class MCafeViewController: UIViewController {
         self.view.addGestureRecognizer(self.swipeGestureRight)
         
         // set current page number label.
-        self.setCurrentPageLabel()
         
-
+        self.coffeehandler.numberOfPages = mCoffee1.count
+        self.setCurrentPageLabel()
     }
     
     override func viewDidAppear(_ animated: Bool) {                 //이 viewDidAppear를 모든 보이는 화면에 넣어야함
@@ -54,13 +54,11 @@ class MCafeViewController: UIViewController {
     // MARK: - Utility functio
     // increase page number on swift left
     func handleSwipeLeft(_ gesture: UISwipeGestureRecognizer){
-        if self.coffeehandler.currentPage < mCoffee1.count {
-            if(self.coffeehandler.currentPage == (mCoffee1.count - 1)){
-                self.coffeehandler.currentPage = 0
-                self.setCurrentPageLabel()
-                return
-            }
-            
+        print(mCoffee1.count)
+        if(self.coffeehandler.currentPage == (mCoffee1.count - 1)){
+            self.coffeehandler.currentPage = 0
+            self.setCurrentPageLabel()
+        } else {
             self.coffeehandler.currentPage += 1
             self.setCurrentPageLabel()
         }
@@ -69,13 +67,11 @@ class MCafeViewController: UIViewController {
     
     // reduce page number on swift right
     func handleSwipeRight(_ gesture: UISwipeGestureRecognizer){
-        
         if self.coffeehandler.currentPage != 0 {
             self.coffeehandler.currentPage -= 1
             self.setCurrentPageLabel()
-        }else{
+        } else {
             self.coffeehandler.currentPage = mCoffee1.count - 1
-            
             self.setCurrentPageLabel()
         }
     }

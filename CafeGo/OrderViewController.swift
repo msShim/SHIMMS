@@ -65,7 +65,7 @@ open class OrderViewController: UIViewController, UIPickerViewDataSource, UIPick
             UIAlertAction in
             ServerManager.sendOrder(phoneNum: status.getOrderList().phoneNumber!, time: status.getOrderList().orderTime!, productName: status.getOrderList().orderMenu!, productCnt: status.getOrderList().orderQuantity, total: status.getOrderList().orderNumber)
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            appDelegate.switchViewControllers()
+            appDelegate.switchStartViewControllers()
         }
         status.initOrder(order: "")
         status.initQuantity(order: "")

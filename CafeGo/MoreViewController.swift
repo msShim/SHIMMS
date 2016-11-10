@@ -23,7 +23,10 @@ class MoreViewController: UIViewController, UIPickerViewDelegate, UITableViewDel
     var starData : String = ""
     var star = ["★★★★★","★★★★☆","★★★☆☆","★★☆☆☆","★☆☆☆☆"]
     var deletePlanetIndexPath: IndexPath? = nil
-    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    @IBAction func Back(_ sender: AnyObject) {
+        appDelegate.switchStartViewControllers()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

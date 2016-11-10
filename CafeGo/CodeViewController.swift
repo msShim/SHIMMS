@@ -14,13 +14,21 @@ class CodeViewController: UIViewController {
         super.touchesBegan(touches, with: event)
     }
     @IBOutlet var Image: UIImageView!
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    @IBAction func Back(_ sender: AnyObject) {
+        appDelegate.switchStartViewControllers()
+    }
+    @IBOutlet weak var qrButton: UIButton!
+    @IBAction func genarateQR(_ sender: AnyObject) {
+        qrButton.setTitle("", for: .normal)
+        qrButton.isHidden = true
+        Image.image = generateQrcodeFromString(string: status.getOrderList().phoneNumber!)
+    }
     let status:StatusService = StatusService()
     override func viewDidLoad() {
         super.viewDidLoad()
-        Image.image = generateQrcodeFromString(string: status.getOrderList().phoneNumber!)
         // Do any additional setup after loading the view, typically from a nib.
     }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

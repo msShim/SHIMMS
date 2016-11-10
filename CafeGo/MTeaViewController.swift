@@ -36,6 +36,7 @@ class MTeaViewController: UIViewController {
         
         // set current page number label.
         //        self.teaimg.settr
+        self.teahandler.numberOfPages = mCoffee3.count
         self.setCurrentPageLabel()
     }
     
@@ -51,25 +52,25 @@ class MTeaViewController: UIViewController {
     // MARK: - Utility functio
     // increase page number on swift left
     func handleSwipeLeft(_ gesture: UISwipeGestureRecognizer){
-        if self.teahandler.currentPage < 4 {
-            if(self.teahandler.currentPage == 3){
-                self.teahandler.currentPage = 0
-                self.setCurrentPageLabel()
-                return
-            }
-            
+        print(mCoffee1.count)
+        if(self.teahandler.currentPage == (mCoffee3.count - 1)){
+            self.teahandler.currentPage = 0
+            self.setCurrentPageLabel()
+        } else {
             self.teahandler.currentPage += 1
             self.setCurrentPageLabel()
         }
     }
     
+    
     // reduce page number on swift right
     func handleSwipeRight(_ gesture: UISwipeGestureRecognizer){
-        
         if self.teahandler.currentPage != 0 {
             self.teahandler.currentPage -= 1
             self.setCurrentPageLabel()
-            
+        } else {
+            self.teahandler.currentPage = mCoffee3.count - 1
+            self.setCurrentPageLabel()
         }
     }
     
@@ -82,7 +83,6 @@ class MTeaViewController: UIViewController {
         ImageDownLoader.settingImg(string: mCoffee3[teahandler.currentPage].img!, imgView: teaimg)
         priceLabel.text = String(describing: mCoffee3[teahandler.currentPage].price!)
         menuLabel.text = String(describing: mCoffee3[teahandler.currentPage].name!)
-        
         
     }
     

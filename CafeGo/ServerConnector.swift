@@ -10,7 +10,7 @@ import Foundation
 import SocketIO
 import AudioToolbox
 
-let serverURL:String = "http://192.168.40.3:8000/"
+let serverURL:String = "http://192.168.49.90:8000/"
 
 class ServerConnector {
 //    var counter = 0
@@ -46,10 +46,6 @@ class ServerConnector {
             }
             tree.categoryMenu(tree.root)
 //            self.idx = data as? String;
-            if(status.getOrderList().verification){
-                let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                appDelegate.switchMainViewControllers()
-            }
         }
         
         socket.on("orderSuccess"){data, ack in

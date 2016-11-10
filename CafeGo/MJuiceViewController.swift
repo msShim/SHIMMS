@@ -37,6 +37,7 @@ class MJuiceViewController: UIViewController {
         self.view.addGestureRecognizer(self.swipeGestureRight)
         
         // set current page number label.
+        self.juicehandler.numberOfPages = mCoffee2.count
         self.setCurrentPageLabel()
     }
     
@@ -52,26 +53,25 @@ class MJuiceViewController: UIViewController {
     // MARK: - Utility functio
     // increase page number on swift left
     func handleSwipeLeft(_ gesture: UISwipeGestureRecognizer){
-        if self.juicehandler.currentPage < 4 {
-            if(self.juicehandler.currentPage == 3){
-                self.juicehandler.currentPage = 0
-                self.setCurrentPageLabel()
-                return
-            }
-            
+        print(mCoffee1.count)
+        if(self.juicehandler.currentPage == (mCoffee2.count - 1)){
+            self.juicehandler.currentPage = 0
+            self.setCurrentPageLabel()
+        } else {
             self.juicehandler.currentPage += 1
             self.setCurrentPageLabel()
         }
     }
     
+    
     // reduce page number on swift right
     func handleSwipeRight(_ gesture: UISwipeGestureRecognizer){
-        
         if self.juicehandler.currentPage != 0 {
             self.juicehandler.currentPage -= 1
             self.setCurrentPageLabel()
-        }else{
+        } else {
             self.juicehandler.currentPage = mCoffee2.count - 1
+            self.setCurrentPageLabel()
         }
     }
     
