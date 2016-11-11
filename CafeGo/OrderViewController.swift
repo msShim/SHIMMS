@@ -17,6 +17,16 @@ open class OrderViewController: UIViewController, UIPickerViewDataSource, UIPick
     var menu = tree
     var cafeMenu = [Coffee]()
     
+    @IBOutlet weak var selectedDate: UILabel!
+    @IBOutlet weak var myDatePicker: UIDatePicker!
+    @IBAction func datePickerAction(_ sender: AnyObject) {
+        var dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        var strDate = dateFormatter.string(from: myDatePicker.date)
+        self.selectedDate.text = strDate
+        status.updateTime(order: strDate)
+        
+    }
     var timeSelect : [String] = []
     var minuteSelect : [String] = []
     var beverageSelect:[String] = []
@@ -24,7 +34,7 @@ open class OrderViewController: UIViewController, UIPickerViewDataSource, UIPick
     var selectionArr = [[String]]()
     
     
-    var registeredTime : [String] = []
+    var registeredTime : [String] = [""]
     var registeredBeverage : [String] = []
     var registeredCount : [String] = []
     var registeredPrice : Int64 = 0
@@ -48,7 +58,6 @@ open class OrderViewController: UIViewController, UIPickerViewDataSource, UIPick
     
     var currentIdx = Int()
     
-    @available(iOS 2.0, *)
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return selectionArr.count;
     }
@@ -69,16 +78,12 @@ open class OrderViewController: UIViewController, UIPickerViewDataSource, UIPick
         }
         status.initOrder(order: "")
         status.initQuantity(order: "")
-        for i in 0..<registeredTime.count{
+        for i in 0..<registeredBeverage.count{
             status.updateOrder(order: registeredBeverage[i])
-            status.updateTime(order: registeredTime[i])
             status.updateQuantity(order: registeredCount[i])
         }
-        
-        registeredArr.append(registeredTime)
         registeredArr.append(registeredBeverage)
         registeredArr.append(registeredCount)
-        
         //시간 메뉴 예약 총액 카페이름 수량
         status.updateOrderNumber(order: registeredPrice)
         status.updateCafeName(order: "명지카페")
@@ -97,18 +102,24 @@ open class OrderViewController: UIViewController, UIPickerViewDataSource, UIPick
         
         super.viewDidLoad()
         //시간 설정.
-        self.setTime()
+//        self.setTime()
         setMenuList()
-
-        selectionArr = [timeSelect, minuteSelect, beverageSelect, countSelect]
+        
+        var todaysDate:NSDate = NSDate()
+        var dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        var DateInFormat:String = dateFormatter.string(from: todaysDate as Date)
+        self.selectedDate.text = DateInFormat
+        status.updateTime(order: DateInFormat)
+        selectionArr = [beverageSelect, countSelect]
         
         self.pickerView.dataSource = self
         self.pickerView.delegate = self
         //data들 초기화 안시켜주면 리스트 움직이지 않으면 데이터가 안 들어감.
-        timeData = timeSelect[pickerView.selectedRow(inComponent: 0)]
-        minuteData = minuteSelect[pickerView.selectedRow(inComponent: 1)]
-        beverageData = beverageSelect[ pickerView.selectedRow(inComponent: 2)]
-        countData = countSelect[pickerView.selectedRow(inComponent: 3)]
+//        timeData = timeSelect[pickerView.selectedRow(inComponent: 0)]
+//        minuteData = minuteSelect[pickerView.selectedRow(inComponent: 1)]
+        beverageData = beverageSelect[ pickerView.selectedRow(inComponent: 0)]
+        countData = countSelect[pickerView.selectedRow(inComponent: 1)]
         // Do any additional setup after loading the view.
     }
     
@@ -127,18 +138,18 @@ open class OrderViewController: UIViewController, UIPickerViewDataSource, UIPick
     }
     //시간 설정
     
-    func setTime(){
-        var time = 0
-        var minute = 0
-        for i in 8..<20 {
-            time = i + 1
-            self.timeSelect.append(String(time))
-        }
-        for i in 0..<12 {
-            minute = i * 5
-            self.minuteSelect.append(String(minute))
-        }
-    }
+//    func setTime(){
+//        var time = 0
+//        var minute = 0
+//        for i in 8..<20 {
+//            time = i + 1
+//            self.timeSelect.append(String(time))
+//        }
+//        for i in 0..<12 {
+//            minute = i * 5
+//            self.minuteSelect.append(String(minute))
+//        }
+//    }
     
     public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return selectionArr[component][row]
@@ -150,34 +161,33 @@ open class OrderViewController: UIViewController, UIPickerViewDataSource, UIPick
     
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        timeData = timeSelect[pickerView.selectedRow(inComponent: 0)]
-        minuteData = minuteSelect[pickerView.selectedRow(inComponent: 1)]
-        beverageData = beverageSelect[ pickerView.selectedRow(inComponent: 2)]
-        countData = countSelect[pickerView.selectedRow(inComponent: 3)]
+//        timeData = timeSelect[pickerView.selectedRow(inComponent: 0)]
+//        minuteData = minuteSelect[pickerView.selectedRow(inComponent: 1)]
+        beverageData = beverageSelect[ pickerView.selectedRow(inComponent: 0)]
+        countData = countSelect[pickerView.selectedRow(inComponent: 1)]
     }
     
     /********** 테이블 뷰 ***************/
     //로우 수
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return registeredTime.count
+        return registeredBeverage.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath ) as! SelectedOrderTableViewCell
-        cell.timeLabel.text = registeredTime[indexPath.row]
+//        cell.timeLabel.text = registeredTime[0]
         cell.beverageLabel.text = registeredBeverage[indexPath.row]
         cell.countLabel.text = registeredCount[indexPath.row]
         return cell
     }
     //추가 버튼
     @IBAction func addButton(_ sender: UIButton) {
-        
         var countSum = self.countSum()
         if(countSum>4){
             self.countAlert()
         }else{
             registeredCount.append(self.countData!)
-            registeredTime.append(self.timeData! + ":" + self.minuteData!)
+//            registeredTime.append(self.timeData! + ":" + self.minuteData!)
             
             registeredBeverage.append(self.beverageData!)
             print(status.getOrderList().orderTime)
@@ -208,6 +218,7 @@ open class OrderViewController: UIViewController, UIPickerViewDataSource, UIPick
         
         self.present(alert, animated: true, completion: nil)
     }
+    
     //드래그앤 드롭
     public func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
@@ -220,6 +231,7 @@ open class OrderViewController: UIViewController, UIPickerViewDataSource, UIPick
             self.confirmDelete()
         }
     }
+    
     //딜리트 확인하는 팝업
     func confirmDelete() {
         let alert = UIAlertController(title: "항목 삭제", message: "정말 삭제?", preferredStyle: .actionSheet)
@@ -257,5 +269,4 @@ open class OrderViewController: UIViewController, UIPickerViewDataSource, UIPick
     func cancelDeletePlanet(_ alertAction: UIAlertAction!) {
         deletePlanetIndexPath = nil
     }
-    
 }

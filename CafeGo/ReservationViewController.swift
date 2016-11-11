@@ -20,6 +20,7 @@ UITableViewDelegate{
             status.initQuantity(order: "")
             status.updateOrderNumber(order: 0)
             status.updateOrderBook(book: false)
+            status.updatemCafeNumber(order: 0)
             orderNumber.text = ""
             
         }
