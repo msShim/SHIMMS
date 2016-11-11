@@ -192,7 +192,7 @@ open class OrderViewController: UIViewController, UIPickerViewDataSource, UIPick
             registeredBeverage.append(self.beverageData!)
             print(status.getOrderList().orderTime)
             
-            registeredArr = [registeredTime, registeredBeverage, registeredCount]
+            registeredArr = [registeredBeverage, registeredCount]
             for i in 0..<cafeMenu.count{
                 if(cafeMenu[i].name == beverageData){
                     priceData = Int64(cafeMenu[i].price!)
@@ -256,12 +256,10 @@ open class OrderViewController: UIViewController, UIPickerViewDataSource, UIPick
         }
         registeredPrice = registeredPrice - priceData! * Int64(registeredCount[(deletePlanetIndexPath?.row)!])!
         priceLabel.text = String(self.registeredPrice)
-        registeredTime.remove(at: (deletePlanetIndexPath?.row)!)
         registeredCount.remove(at: (deletePlanetIndexPath?.row)!)
         registeredBeverage.remove(at: (deletePlanetIndexPath?.row)!)
         registeredArr[0].remove(at: (deletePlanetIndexPath?.row)!)
         registeredArr[1].remove(at: (deletePlanetIndexPath?.row)!)
-        registeredArr[2].remove(at: (deletePlanetIndexPath?.row)!)
         deletePlanetIndexPath = nil
         selectedRecord.reloadData()
     }

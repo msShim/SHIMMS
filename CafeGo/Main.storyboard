@@ -447,7 +447,7 @@
                                     <constraint firstAttribute="height" constant="340" id="asK-c0-QJ4"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="56"/>
-                                <state key="normal" title="Click Me" backgroundImage="luanch">
+                                <state key="normal" title="Click Me" backgroundImage="main">
                                     <color key="titleColor" red="0.62454394040000005" green="0.36248805670000001" blue="0.088232513870000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -827,7 +827,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="8pP-VB-EAO">
-                                <frame key="frameInset" minY="72" width="375" height="538"/>
+                                <frame key="frameInset" minY="72" width="375" height="546"/>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F5K-S1-r0w">
                                 <connections>
@@ -853,10 +853,10 @@
                             <constraint firstItem="Bgf-Kp-LRE" firstAttribute="top" secondItem="dCf-gl-aAT" secondAttribute="bottom" constant="8" symbolic="YES" id="0eY-Cx-hJk"/>
                             <constraint firstItem="F5K-S1-r0w" firstAttribute="centerX" secondItem="Ohi-uP-dfc" secondAttribute="centerX" id="0y7-6x-Im4"/>
                             <constraint firstItem="F5K-S1-r0w" firstAttribute="centerY" secondItem="Ohi-uP-dfc" secondAttribute="centerY" id="8Kf-bP-Zix"/>
-                            <constraint firstItem="dCf-gl-aAT" firstAttribute="bottom" secondItem="8pP-VB-EAO" secondAttribute="bottom" id="AI0-QA-NS2"/>
+                            <constraint firstItem="dCf-gl-aAT" firstAttribute="bottom" secondItem="8pP-VB-EAO" secondAttribute="bottom" constant="-8" id="AI0-QA-NS2"/>
                             <constraint firstItem="F5K-S1-r0w" firstAttribute="height" secondItem="Ohi-uP-dfc" secondAttribute="height" multiplier="0.7" id="J8z-NO-BEG"/>
                             <constraint firstItem="dCf-gl-aAT" firstAttribute="centerX" secondItem="Ohi-uP-dfc" secondAttribute="centerX" id="Xtk-MK-zW3"/>
-                            <constraint firstItem="dCf-gl-aAT" firstAttribute="centerX" secondItem="8pP-VB-EAO" secondAttribute="centerX" id="am5-sX-Y2J"/>
+                            <constraint firstItem="dCf-gl-aAT" firstAttribute="centerX" secondItem="8pP-VB-EAO" secondAttribute="centerX" constant="-5.5" id="am5-sX-Y2J"/>
                             <constraint firstItem="F5K-S1-r0w" firstAttribute="width" secondItem="Ohi-uP-dfc" secondAttribute="width" multiplier="0.8" id="ccH-9e-Wt2"/>
                             <constraint firstItem="dCf-gl-aAT" firstAttribute="top" secondItem="jIX-Sk-69r" secondAttribute="bottom" constant="499" id="mm6-Zv-Nxx"/>
                         </constraints>
@@ -1390,7 +1390,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sMb-0v-5xy" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Coffee" image="cof" id="1Qw-8D-QPd"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="uAC-77-cg4">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uAC-77-cg4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1409,7 +1409,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CHu-xx-fYA" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Ade/Tea" image="tea" id="dnK-LM-7yy"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ISz-4A-Sie">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ISz-4A-Sie">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1428,7 +1428,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fKP-Hb-R5h" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Juice" image="juice" id="c9X-8J-MG0"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="fBQ-eN-kXp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fBQ-eN-kXp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1447,7 +1447,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LUS-KI-eiQ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Reply" image="reply" id="iOg-KD-EVS"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="xFQ-Dh-KZ5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xFQ-Dh-KZ5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1472,13 +1472,14 @@
         <image name="grazia" width="200" height="150"/>
         <image name="juice" width="25" height="25"/>
         <image name="luanch" width="480" height="602"/>
+        <image name="main" width="430" height="800"/>
         <image name="myoungji" width="200" height="150"/>
         <image name="reply" width="25" height="25"/>
         <image name="tea" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="nR1-e1-Vyk"/>
-        <segue reference="e1d-xo-Ubp"/>
+        <segue reference="eRC-LE-2PU"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
 </document>
