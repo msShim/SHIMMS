@@ -10,7 +10,7 @@ import Foundation
 import SocketIO
 import AudioToolbox
 
-let serverURL:String = "http://192.168.49.90:8000/"
+let serverURL:String = "http://192.168.41.8:8000/"
 
 class ServerConnector {
 //    var counter = 0

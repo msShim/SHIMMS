@@ -36,6 +36,7 @@
 		A1C6F6081DA3BEC900B9D4FE /* CafeGo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A1C6F6061DA3BEC900B9D4FE /* CafeGo.xcdatamodeld */; };
 		A1C6F60D1DA3BEC900B9D4FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C6F60B1DA3BEC900B9D4FE /* LaunchScreen.storyboard */; };
 		A1C6F6151DA3C29100B9D4FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C6F6141DA3C29100B9D4FE /* ViewController.swift */; };
+		A1EAB2DC1DDEF74A0078EA90 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EAB2DB1DDEF74A0078EA90 /* SearchViewController.swift */; };
 		A1EF48261DAD1025004E68BB /* CoffeeMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EF48221DAD1025004E68BB /* CoffeeMViewController.swift */; };
 		A1EF48271DAD1025004E68BB /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EF48231DAD1025004E68BB /* MoreViewController.swift */; };
 		A1EF48281DAD1025004E68BB /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EF48241DAD1025004E68BB /* OrderViewController.swift */; };
@@ -79,6 +80,7 @@
 		A1C6F60C1DA3BEC900B9D4FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A1C6F60E1DA3BEC900B9D4FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1C6F6141DA3C29100B9D4FE /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A1EAB2DB1DDEF74A0078EA90 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		A1EF48221DAD1025004E68BB /* CoffeeMViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoffeeMViewController.swift; sourceTree = "<group>"; };
 		A1EF48231DAD1025004E68BB /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		A1EF48241DAD1025004E68BB /* OrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				A1C6F60B1DA3BEC900B9D4FE /* LaunchScreen.storyboard */,
 				A1C6F5FF1DA3BEC900B9D4FE /* AppDelegate.swift */,
 				7D18CA2A1DC662F8002D41DD /* SWRViewController.swift */,
+				A1EAB2DB1DDEF74A0078EA90 /* SearchViewController.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 				7D18CA291DC659DA002D41DD /* SWRevealViewController.m in Sources */,
 				830ACED21DBA3ED4001C72BB /* ServerConnector.swift in Sources */,
 				A1C6F6001DA3BEC900B9D4FE /* AppDelegate.swift in Sources */,
+				A1EAB2DC1DDEF74A0078EA90 /* SearchViewController.swift in Sources */,
 				7DDAF7BC1DC5E83800D94ABA /* OrderList+CoreDataClass.swift in Sources */,
 				7DDAF7B51DC5E52500D94ABA /* TableViewCell.swift in Sources */,
 				7D933C711DA728A300736B46 /* redblackTree.swift in Sources */,

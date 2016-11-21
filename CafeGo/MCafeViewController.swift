@@ -90,8 +90,4 @@ class MCafeViewController: UIViewController {
         priceLabel.text = String(describing: mCoffee1[coffeehandler.currentPage].price!)
         nameLabel.text = String(describing: mCoffee1[coffeehandler.currentPage].name!)
     }
-    
-        
-    
-   
 }
