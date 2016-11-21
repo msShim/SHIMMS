@@ -41,7 +41,8 @@ open class OrderViewController: UIViewController, UIPickerViewDataSource, UIPick
     var nextIdx = Int()
     
     var deletePlanetIndexPath: IndexPath? = nil
-    
+    var alertMessage:String = ""
+
     //피커뷰 선택 값
     
     var timeData : String?
@@ -65,28 +66,34 @@ open class OrderViewController: UIViewController, UIPickerViewDataSource, UIPick
     @IBOutlet weak var selectedRecord: UITableView!
     
     @IBAction func order(_ sender: UIButton) {
-        let alert = UIAlertController(title: "주문창", message: "예약하고 튀면 듀금", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "주문창", message: alertMessage, preferredStyle: UIAlertControllerStyle.alert)
         let list : OrderListService = OrderListService()
         var orderMenuString: String = ""
         var okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default){
             UIAlertAction in
-            ServerManager.sendOrder(phoneNum: status.getOrderList().phoneNumber!, time: status.getOrderList().orderTime!, productName: status.getOrderList().orderMenu!, productCnt: status.getOrderList().orderQuantity, total: status.getOrderList().orderNumber)
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            appDelegate.switchStartViewControllers()
-        }
-        status.initOrder(order: "")
-        status.initQuantity(order: "")
-        for i in 0..<registeredBeverage.count{
-            status.updateOrder(order: registeredBeverage[i])
-            status.updateQuantity(order: registeredCount[i])
-        }
-        registeredArr.append(registeredBeverage)
-        registeredArr.append(registeredCount)
-        //시간 메뉴 예약 총액 카페이름 수량
-        status.updateOrderNumber(order: registeredPrice)
-        status.updateCafeName(order: "명지카페")
-        if(status.getOrderList().orderNumber != 0){
-            status.updateOrderBook(book: true)
+            if(status.getOrderList().orderBook == false){
+                status.initOrder(order: "")
+                status.initQuantity(order: "")
+                for i in 0..<self.registeredBeverage.count{
+                    status.updateOrder(order: self.registeredBeverage[i])
+                    status.updateQuantity(order: self.registeredCount[i])
+                }
+                self.registeredArr.append(self.registeredBeverage)
+                self.registeredArr.append(self.registeredCount)
+                //시간 메뉴 예약 총액 카페이름 수량
+                status.updateOrderNumber(order: self.registeredPrice)
+                status.updateCafeName(order: "명지카페")
+                if(status.getOrderList().orderNumber != 0){
+                    status.updateOrderBook(book: true)
+                }
+                
+                ServerManager.sendOrder(phoneNum: status.getOrderList().phoneNumber!, time: status.getOrderList().orderTime!, productName: status.getOrderList().orderMenu!, productCnt: status.getOrderList().orderQuantity, total: status.getOrderList().orderNumber)
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.switchStartViewControllers()
+            } else {
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.switchStartViewControllers()
+            }
         }
         //실험.
         print(list.get().orderMenu , list.get().phoneNumber,list.get().orderNumber)
@@ -102,7 +109,11 @@ open class OrderViewController: UIViewController, UIPickerViewDataSource, UIPick
         //시간 설정.
 //        self.setTime()
         setMenuList()
-        
+        if(status.getOrderList().orderBook == true){
+            alertMessage = "중복 예약은 불가합니다. 원하신다면 예약 취소 후 이용해 주세요."
+        } else {
+            alertMessage = "예약되었습니다. 감사합니다."
+        }
         var todaysDate:NSDate = NSDate()
         var dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
