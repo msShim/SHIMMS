@@ -12,7 +12,11 @@ class ImageLoader {
     
     func settingImg(string:String, imgView:UIImageView) {
         let escapedAddress = string.addingPercentEncoding( withAllowedCharacters: .urlQueryAllowed)
+<<<<<<< HEAD
         if let checkedUrl = URL(string: "http://192.168.41.8:3000/images/" + escapedAddress!) {
+=======
+        if let checkedUrl = URL(string: "http://192.168.44.179:3000/images/" + escapedAddress!) {
+>>>>>>> 80119f7132054c7482e1157b24da5ba2e5ab7577
             imgView.contentMode = .scaleAspectFit
             downloadImage(url: checkedUrl, imgView: imgView)
         }
