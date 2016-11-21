@@ -10,15 +10,11 @@ import Foundation
 import SocketIO
 import AudioToolbox
 
-<<<<<<< HEAD
-let serverURL:String = "http://192.168.41.8:8000/"
-=======
-let serverURL:String = "http://192.168.44.179:8000/"
->>>>>>> 80119f7132054c7482e1157b24da5ba2e5ab7577
+let serverURL:String = "http://192.168.41.180:8000/"
 
 class ServerConnector {
-//    var counter = 0
-//    var timer : Timer = Timer()
+    //    var counter = 0
+    //    var timer : Timer = Timer()
     var idx: String?
     var socket = SocketIOClient(socketURL: URL(string: serverURL)!)
     var products:NSMutableArray?
@@ -31,16 +27,16 @@ class ServerConnector {
         socket.on("connectSuccess") {data, ack in
             print("!!!!!!!connectSuccess!!!!!!")
             print(data)
-//            print(data[0] as! NSMutableArray)
+            //            print(data[0] as! NSMutableArray)
             self.products = data[0] as? NSMutableArray
-//            if(status.getOrderList().verification == true){
-//                self.socket.emit("sendPhoneNum", status.getOrderList().phoneNumber!)
-//            }
+            //            if(status.getOrderList().verification == true){
+            //                self.socket.emit("sendPhoneNum", status.getOrderList().phoneNumber!)
+            //            }
             for product in self.products! {
                 var item = Coffee()
                 print(product as! NSDictionary)
                 let temp = product as! NSDictionary
-//                print("이 제품의 이름은 \(temp.value(forKey: "name")) 입니다.")      //temp에 키를 검색해서 접근함
+                //                print("이 제품의 이름은 \(temp.value(forKey: "name")) 입니다.")      //temp에 키를 검색해서 접근함
                 item.id = Int(temp.value(forKey: "productID") as! String)
                 item.name = (temp.value(forKey: "name") as! String?)!
                 item.category = (temp.value(forKey: "category") as! Int?)!
@@ -49,7 +45,7 @@ class ServerConnector {
                 tree.insert(item)
             }
             tree.categoryMenu(tree.root)
-//            self.idx = data as? String;
+            //            self.idx = data as? String;
         }
         
         socket.on("orderSuccess"){data, ack in
@@ -61,10 +57,10 @@ class ServerConnector {
         }
         
         socket.on("successCall"){data, ack in
-//            print("!!!!!!!successCall!!!!!!")
-//            print("진동아 와라!")
-//            self.counter = 0
-//            self.timer = Timer.scheduledTimer(timeInterval: 0.6, target: self, selector: Selector("vibratePhone"), userInfo: nil, repeats: true)
+            //            print("!!!!!!!successCall!!!!!!")
+            //            print("진동아 와라!")
+            //            self.counter = 0
+            //            self.timer = Timer.scheduledTimer(timeInterval: 0.6, target: self, selector: Selector("vibratePhone"), userInfo: nil, repeats: true)
             AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
             let alert = UIAlertController(title: "예약하신 상품이 준비되었습니다.", message: "어서오세요", preferredStyle: UIAlertControllerStyle.alert)
             var orderMenuString: String = ""
@@ -75,24 +71,24 @@ class ServerConnector {
             }
             self.viewController?.present(alert, animated: true, completion: nil)
             alert.addAction(okAction)
-
+            
         }
         
         
     }
     
-//    func vibratePhone() {
-//        self.counter += 1
-//        print("!!")
-//        switch self.counter {
-//        case 1, 2:
-//            print("!!!")
-//            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
-//        default:
-//            self.timer.invalidate()
-//        }
-//    }
-
+    //    func vibratePhone() {
+    //        self.counter += 1
+    //        print("!!")
+    //        switch self.counter {
+    //        case 1, 2:
+    //            print("!!!")
+    //            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+    //        default:
+    //            self.timer.invalidate()
+    //        }
+    //    }
+    
     
     func connect(){
         self.addHandlers()
@@ -104,12 +100,12 @@ class ServerConnector {
         self.socket.disconnect()
     }
     
-//    struct Order {
-//        var phoneNum:String
-//        var time:String
-//        var productName:String
-//        var productCnt:String
-//    }
+    //    struct Order {
+    //        var phoneNum:String
+    //        var time:String
+    //        var productName:String
+    //        var productCnt:String
+    //    }
     
     func sendPhoneNum(){
         print("폰번호전송")
@@ -120,23 +116,23 @@ class ServerConnector {
         print("리뷰전송")
         var score:String
         switch star {
-            case "★★★★★":
-                score = "5";
-                break
-            case "★★★★☆":
-                score = "4";
-                break
-            case "★★★☆☆":
-                score = "3";
-                break
-            case "★★☆☆☆":
-                score = "2";
-                break
-            case "★☆☆☆☆":
-                score = "1";
-                break
-            default:
-                score = "0";
+        case "★★★★★":
+            score = "5";
+            break
+        case "★★★★☆":
+            score = "4";
+            break
+        case "★★★☆☆":
+            score = "3";
+            break
+        case "★★☆☆☆":
+            score = "2";
+            break
+        case "★☆☆☆☆":
+            score = "1";
+            break
+        default:
+            score = "0";
         }
         var data:[String] = []
         data.append(status.getOrderList().phoneNumber!)
@@ -147,17 +143,17 @@ class ServerConnector {
     
     func sendOrder(phoneNum:String, time:String, productName:String, productCnt:String, total:Int64) {
         
-//        var data = Order(phoneNum: phoneNum, time: time, productName: productName, productCnt: productCnt)
+        //        var data = Order(phoneNum: phoneNum, time: time, productName: productName, productCnt: productCnt)
         var data:[String] = []
         data.append(phoneNum)
         data.append(time)
         data.append(productName)
         data.append(productCnt)
         data.append(String(total))
-    
+        
         self.socket.emit("sendOrder", data)
     }
-
+    
 }
 
 class ProductAdapter: AnyObject {
