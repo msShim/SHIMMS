@@ -1606,7 +1606,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LUS-KI-eiQ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Reply" image="reply" id="iOg-KD-EVS"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="xFQ-Dh-KZ5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xFQ-Dh-KZ5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
