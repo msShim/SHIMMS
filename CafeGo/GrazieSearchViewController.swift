@@ -9,8 +9,9 @@
 import UIKit
 
 class GrazieSearchViewController: UITableViewController {
-
-    @IBOutlet weak var tableView: UITableView!
+    
+    
+    @IBOutlet weak var tableview: UITableView!
     
     var filteredMenu = [Coffee]()
     override func viewDidLoad() {
@@ -27,17 +28,17 @@ class GrazieSearchViewController: UITableViewController {
     
     
     //MARK TABLE VIEW
-    func numberOfSections(in tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1;
     }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(tableView == self.searchDisplayController?.searchResultsTableView){
             return self.filteredMenu.count
         } else {
             return mCoffeeAll.count
         }
     }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "cell")! as! SearchTableViewCell
         var menu:Coffee
         if(tableView == self.searchDisplayController?.searchResultsTableView){
@@ -53,7 +54,7 @@ class GrazieSearchViewController: UITableViewController {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         var menu:Coffee
         if(tableView == self.searchDisplayController?.searchResultsTableView){

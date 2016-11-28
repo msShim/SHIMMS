@@ -13,15 +13,33 @@ class MainViewController: UIViewController {
     var timer : Timer?
     var index:Int = 0
     var img:[String]?
+    var contentSize: CGFloat = 0
     
+    @IBOutlet weak var scrollView: UIScrollView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setPromotion()
+        promotionImage.contentMode = UIViewContentMode.scaleAspectFit
+        
+        promotionImage.frame.origin.y = 660
+        
+        scrollView.addSubview(promotionImage)
+        
+        scrollView.layoutSubviews()
+        
         var timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.setPromotion), userInfo: nil, repeats: true);
         timer.fire()
-        // Do any additional setup after loading the view.
+        
+        contentSize = promotionImage.frame.origin.y
+        scrollView.contentSize.height = promotionImage.frame.size.height + promotionImage.frame.origin.y
+        self.view.addSubview(scrollView)
+        var a = scrollView.contentSize.height
+        var b = promotionImage.frame.origin.y
+        var c = promotionImage.frame.height
+        var d = "되라"
+       
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)

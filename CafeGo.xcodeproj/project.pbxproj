@@ -33,6 +33,8 @@
 		7D933CAB1DADC1D300736B46 /* OrderListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D933CAA1DADC1D300736B46 /* OrderListService.swift */; };
 		7D933CB11DADC1E400736B46 /* StatusService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D933CB01DADC1E400736B46 /* StatusService.swift */; };
 		7D933CBE1DAE577000736B46 /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D933CBD1DAE577000736B46 /* CodeViewController.swift */; };
+		7DD82F501DE9767100AA487C /* MCouponView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD82F4F1DE9767100AA487C /* MCouponView.swift */; };
+		7DD82F521DE9B26400AA487C /* GraCouponView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD82F511DE9B26400AA487C /* GraCouponView.swift */; };
 		7DD9E01A1DDB2810008C2786 /* GraCoffeeMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD9E0191DDB2810008C2786 /* GraCoffeeMViewController.swift */; };
 		7DD9E01C1DDB2BE3008C2786 /* GraOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD9E01B1DDB2BE3008C2786 /* GraOrderViewController.swift */; };
 		7DD9E01E1DDB2FFA008C2786 /* GraSelectedOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD9E01D1DDB2FFA008C2786 /* GraSelectedOrderTableViewCell.swift */; };
@@ -97,6 +99,8 @@
 		7D933CAA1DADC1D300736B46 /* OrderListService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderListService.swift; sourceTree = "<group>"; };
 		7D933CB01DADC1E400736B46 /* StatusService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusService.swift; sourceTree = "<group>"; };
 		7D933CBD1DAE577000736B46 /* CodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
+		7DD82F4F1DE9767100AA487C /* MCouponView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCouponView.swift; sourceTree = "<group>"; };
+		7DD82F511DE9B26400AA487C /* GraCouponView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraCouponView.swift; sourceTree = "<group>"; };
 		7DD9E0191DDB2810008C2786 /* GraCoffeeMViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraCoffeeMViewController.swift; sourceTree = "<group>"; };
 		7DD9E01B1DDB2BE3008C2786 /* GraOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraOrderViewController.swift; sourceTree = "<group>"; };
 		7DD9E01D1DDB2FFA008C2786 /* GraSelectedOrderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraSelectedOrderTableViewCell.swift; sourceTree = "<group>"; };
@@ -192,6 +196,8 @@
 				7D0F1BCD1DDD884A00A31DDC /* Gra2MoreViewController.swift */,
 				7DDAF7BE1DC6379200D94ABA /* BeforeReserveViewController.swift */,
 				7D933CBD1DAE577000736B46 /* CodeViewController.swift */,
+				7DD82F4F1DE9767100AA487C /* MCouponView.swift */,
+				7DD82F511DE9B26400AA487C /* GraCouponView.swift */,
 			);
 			name = "New Group";
 			sourceTree = "<group>";
@@ -482,6 +488,7 @@
 				7D933C711DA728A300736B46 /* redblackTree.swift in Sources */,
 				7D0F1BC11DDD82C100A31DDC /* Gra2OrderViewController.swift in Sources */,
 				A1EF48271DAD1025004E68BB /* MoreViewController.swift in Sources */,
+				7DD82F501DE9767100AA487C /* MCouponView.swift in Sources */,
 				7D933CBE1DAE577000736B46 /* CodeViewController.swift in Sources */,
 				7DD9E01C1DDB2BE3008C2786 /* GraOrderViewController.swift in Sources */,
 				A1C6F6151DA3C29100B9D4FE /* ViewController.swift in Sources */,
@@ -501,6 +508,7 @@
 				7D0F1BBD1DDD820600A31DDC /* Gra2CafeViewController.swift in Sources */,
 				7DDAF7B71DC5E66A00D94ABA /* ReservationViewController.swift in Sources */,
 				7DD9E02B1DDC97A0008C2786 /* GraMoreViewController.swift in Sources */,
+				7DD82F521DE9B26400AA487C /* GraCouponView.swift in Sources */,
 				7D0F1BBF1DDD827700A31DDC /* Gra2CoffeeMViewController.swift in Sources */,
 				7DD9E0221DDC888E008C2786 /* GraJuiceViewController.swift in Sources */,
 				7D7DE9C91DD401E900E8A05C /* AdeMViewController.swift in Sources */,
