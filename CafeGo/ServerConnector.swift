@@ -10,7 +10,7 @@ import Foundation
 import SocketIO
 import AudioToolbox
 
-let serverURL:String = "http://127.0.0.1:8000/"
+let serverURL:String = "http://192.168.41.34:8000/"
 
 class ServerConnector {
     //    var counter = 0
@@ -23,6 +23,7 @@ class ServerConnector {
     func addHandlers()
     {
         var menu:Int = 0;
+        
         socket.on("connectSuccess") {data, ack in
             print("!!!!!!!connectSuccess!!!!!!")
             print(data)

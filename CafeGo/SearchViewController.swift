@@ -14,7 +14,6 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     var filteredMenu = [Coffee]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.tableView.reloadData()
         // Do any additional setup after loading the view.
     }
@@ -36,6 +35,9 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             return mCoffeeAll.count
         }
     }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "cell")! as! SearchTableViewCell
         var menu:Coffee
@@ -48,7 +50,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         cell.cafeName.text = "명지카페"
         cell.menuName.text = menu.name
         ImageDownLoader.settingImg(string: mCoffeeAll[indexPath.row].img!, imgView: cell.img)
-        cell.price.text = String(describing: menu.price)
+        cell.price.text = String(describing: menu.price!)
         return cell
     }
     
@@ -64,9 +66,9 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     
     // mark: Search
     
-    func filterContentForSearchText(searchText: String, scope: String = "menuName"){
+    func filterContentForSearchText(searchText: String, scope: String = "Title"){
         self.filteredMenu = mCoffeeAll.filter({( menu:Coffee) -> Bool in
-            var categoryMatch = (scope == "menuName")
+            var categoryMatch = (scope == "Title")
             var stringMatch = menu.name?.range(of: searchText)
             
             return categoryMatch && (stringMatch != nil)
@@ -74,34 +76,14 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func searchDisplayController(_ controller: UISearchDisplayController, shouldReloadTableForSearch searchString: String?) -> Bool {
-        self.filterContentForSearchText(searchText: searchString!, scope: "menuName")
+        self.filterContentForSearchText(searchText: searchString!, scope: "Title")
         return true
     }
     
     func searchDisplayController(_ controller: UISearchDisplayController, shouldReloadTableForSearchScope searchOption: Int) -> Bool {
-        self.filterContentForSearchText(searchText: (self.searchDisplayController?.searchBar.text)!, scope:"menuName")
+        self.filterContentForSearchText(searchText: (self.searchDisplayController?.searchBar.text)!, scope:"Title")
         return true
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     /*
     // MARK: - Navigation
 
