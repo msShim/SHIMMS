@@ -52,9 +52,10 @@
 		830ACED21DBA3ED4001C72BB /* ServerConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830ACED11DBA3ED4001C72BB /* ServerConnector.swift */; };
 		830C7BE61DC6E11000E18DF8 /* PreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830C7BE51DC6E11000E18DF8 /* PreViewController.swift */; };
 		830C7BEA1DC7094700E18DF8 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830C7BE91DC7094700E18DF8 /* ImageLoader.swift */; };
-		A15EC3CF1DE5D68B00A806A8 /* MJUSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15EC3CE1DE5D68B00A806A8 /* MJUSearchViewController.swift */; };
+		A15EC3CF1DE5D68B00A806A8 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15EC3CE1DE5D68B00A806A8 /* SearchViewController.swift */; };
 		A15EC3D11DE666C400A806A8 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15EC3D01DE666C400A806A8 /* SearchTableViewCell.swift */; };
-		A15EC3D31DE67DD600A806A8 /* GrazieSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15EC3D21DE67DD500A806A8 /* GrazieSearchViewController.swift */; };
+		A15EC3D51DE6830A00A806A8 /* GraSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15EC3D41DE6830A00A806A8 /* GraSearchViewController.swift */; };
+		A15EC3D71DE6857200A806A8 /* GraSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15EC3D61DE6857200A806A8 /* GraSearchTableViewCell.swift */; };
 		A1C6F6001DA3BEC900B9D4FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C6F5FF1DA3BEC900B9D4FE /* AppDelegate.swift */; };
 		A1C6F6081DA3BEC900B9D4FE /* CafeGo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A1C6F6061DA3BEC900B9D4FE /* CafeGo.xcdatamodeld */; };
 		A1C6F60D1DA3BEC900B9D4FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C6F60B1DA3BEC900B9D4FE /* LaunchScreen.storyboard */; };
@@ -116,9 +117,10 @@
 		830ACED11DBA3ED4001C72BB /* ServerConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerConnector.swift; sourceTree = "<group>"; };
 		830C7BE51DC6E11000E18DF8 /* PreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreViewController.swift; sourceTree = "<group>"; };
 		830C7BE91DC7094700E18DF8 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
-		A15EC3CE1DE5D68B00A806A8 /* MJUSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJUSearchViewController.swift; sourceTree = "<group>"; };
+		A15EC3CE1DE5D68B00A806A8 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		A15EC3D01DE666C400A806A8 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
-		A15EC3D21DE67DD500A806A8 /* GrazieSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrazieSearchViewController.swift; sourceTree = "<group>"; };
+		A15EC3D41DE6830A00A806A8 /* GraSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraSearchViewController.swift; sourceTree = "<group>"; };
+		A15EC3D61DE6857200A806A8 /* GraSearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraSearchTableViewCell.swift; sourceTree = "<group>"; };
 		A1C6F5FC1DA3BEC900B9D4FE /* CafeGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CafeGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1C6F5FF1DA3BEC900B9D4FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1C6F6071DA3BEC900B9D4FE /* CafeGo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CafeGo.xcdatamodel; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				7DD9E02C1DDC9970008C2786 /* GraTableViewCell.swift */,
 				7D0F1BCF1DDD88C100A31DDC /* Gra2TableViewCell.swift */,
 				A15EC3D01DE666C400A806A8 /* SearchTableViewCell.swift */,
+				A15EC3D61DE6857200A806A8 /* GraSearchTableViewCell.swift */,
 			);
 			name = tableCell;
 			sourceTree = "<group>";
@@ -282,8 +285,8 @@
 				A1C6F60B1DA3BEC900B9D4FE /* LaunchScreen.storyboard */,
 				A1C6F5FF1DA3BEC900B9D4FE /* AppDelegate.swift */,
 				7D18CA2A1DC662F8002D41DD /* SWRViewController.swift */,
-				A15EC3D21DE67DD500A806A8 /* GrazieSearchViewController.swift */,
-				A15EC3CE1DE5D68B00A806A8 /* MJUSearchViewController.swift */,
+				A15EC3CE1DE5D68B00A806A8 /* SearchViewController.swift */,
+				A15EC3D41DE6830A00A806A8 /* GraSearchViewController.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -469,14 +472,14 @@
 				7DDAF7BF1DC6379300D94ABA /* BeforeReserveViewController.swift in Sources */,
 				830C7BE61DC6E11000E18DF8 /* PreViewController.swift in Sources */,
 				7D24835F1DC4D8BA00711C65 /* VerifViewController.swift in Sources */,
-				A15EC3CF1DE5D68B00A806A8 /* MJUSearchViewController.swift in Sources */,
+				A15EC3CF1DE5D68B00A806A8 /* SearchViewController.swift in Sources */,
 				A1EF48261DAD1025004E68BB /* CoffeeMViewController.swift in Sources */,
 				7D18CA291DC659DA002D41DD /* SWRevealViewController.m in Sources */,
 				7D0F1BD01DDD88C100A31DDC /* Gra2TableViewCell.swift in Sources */,
 				830ACED21DBA3ED4001C72BB /* ServerConnector.swift in Sources */,
-				A15EC3D31DE67DD600A806A8 /* GrazieSearchViewController.swift in Sources */,
 				A1C6F6001DA3BEC900B9D4FE /* AppDelegate.swift in Sources */,
 				7DDAF7BC1DC5E83800D94ABA /* OrderList+CoreDataClass.swift in Sources */,
+				A15EC3D71DE6857200A806A8 /* GraSearchTableViewCell.swift in Sources */,
 				7D0F1BCE1DDD884A00A31DDC /* Gra2MoreViewController.swift in Sources */,
 				7DDAF7B51DC5E52500D94ABA /* TableViewCell.swift in Sources */,
 				7D933C711DA728A300736B46 /* redblackTree.swift in Sources */,
@@ -508,6 +511,7 @@
 				7D933C731DA8C9B600736B46 /* Function.swift in Sources */,
 				7DD9E01E1DDB2FFA008C2786 /* GraSelectedOrderTableViewCell.swift in Sources */,
 				7D0F1BCA1DDD85D300A31DDC /* Gra2JuiceMViewController.swift in Sources */,
+				A15EC3D51DE6830A00A806A8 /* GraSearchViewController.swift in Sources */,
 				7D2483611DC4FA3D00711C65 /* MainViewController.swift in Sources */,
 				A1EF48291DAD1025004E68BB /* SelectedOrderTableViewCell.swift in Sources */,
 				7DD9E0201DDB317B008C2786 /* GraCafeViewController.swift in Sources */,
@@ -561,7 +565,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
