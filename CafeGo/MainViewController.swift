@@ -9,7 +9,11 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    @IBOutlet weak var G3WaitingNumber: UILabel!
+    @IBOutlet weak var GWaitingNumber: UILabel!
+    @IBOutlet weak var MWaitingNumber: UILabel!
     @IBOutlet weak var promotionImage: UIImageView!
+    
     var timer : Timer?
     var index:Int = 0
     var img:[String]?
@@ -21,6 +25,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setPromotion()
+        ServerManager.setWaitingNumber(Mainview: self)
         promotionImage.contentMode = UIViewContentMode.scaleAspectFit
         
         promotionImage.frame.origin.y = 660
@@ -29,7 +34,7 @@ class MainViewController: UIViewController {
         
         scrollView.layoutSubviews()
         
-        var timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.setPromotion), userInfo: nil, repeats: true);
+        let timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.setPromotion), userInfo: nil, repeats: true);
         timer.fire()
         
         contentSize = promotionImage.frame.origin.y
@@ -62,6 +67,11 @@ class MainViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    func setWaitingNumber(mnumber : String, gnumber : String, g1number : String){
+        self.MWaitingNumber.text = mnumber
+        self.GWaitingNumber.text = gnumber
+        self.G3WaitingNumber.text = g1number
     }
     @objc fileprivate func setPromotion(){
 //        // set current page number label

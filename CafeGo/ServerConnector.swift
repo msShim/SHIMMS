@@ -10,7 +10,7 @@ import Foundation
 import SocketIO
 import AudioToolbox
 
-let serverURL:String = "http://192.168.41.34:8000/"
+let serverURL:String = "http://192.168.0.14:8000/"
 
 class ServerConnector {
     //    var counter = 0
@@ -47,7 +47,6 @@ class ServerConnector {
             tree.categoryMenu(tree.root)
             //            self.idx = data as? String;
         }
-        
         socket.on("orderSuccess"){data, ack in
             print("!!!!!!!orderSuccess!!!!!!")
             print(data[0])
@@ -106,7 +105,10 @@ class ServerConnector {
     //        var productName:String
     //        var productCnt:String
     //    }
-    
+    func setWaitingNumber(Mainview : MainViewController){
+        print("대기인원요청")
+        self.socket.emit("requestWaitingNum")
+    }
     func sendPhoneNum(){
         print("폰번호전송")
         self.socket.emit("sendPhoneNum", status.getOrderList().phoneNumber!)
@@ -143,7 +145,7 @@ class ServerConnector {
     
     func sendOrder(phoneNum:String, time:String, productName:String, productCnt:String, total:Int64) {
         
-        //        var data = Order(phoneNum: phoneNum, time: time, productName: productName, productCnt: productCnt)
+        // var data = Order(phoneNum: phoneNum, time: time, productName: productName, productCnt: productCnt)
         var data:[String] = []
         data.append(phoneNum)
         data.append(time)

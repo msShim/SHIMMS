@@ -10,7 +10,11 @@ import UIKit
 
 class SearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate {
     @IBOutlet weak var tableView: UITableView!
-
+    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    @IBAction func Back(_ sender: AnyObject) {
+        appDelegate.switchStartViewControllers()
+    }
     var filteredMenu = [Coffee]()
     override func viewDidLoad() {
         super.viewDidLoad()

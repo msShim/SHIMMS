@@ -38,7 +38,7 @@ class GraMoreViewController: UIViewController, UIPickerViewDelegate, UITableView
         starData = star[starPicker.selectedRow(inComponent:0)]
         //Looks for single or multiple taps.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(MoreViewController.dismissKeyboard))
-        
+        self.starPicker.tintColor = UIColor(red: 252, green: 90, blue: 141, alpha: 0)
         //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
         //tap.cancelsTouchesInView = false
         

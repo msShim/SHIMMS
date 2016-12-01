@@ -83,7 +83,6 @@ class Gra2MoreViewController: UIViewController, UIPickerViewDelegate, UITableVie
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         starData = star[pickerView.selectedRow(inComponent: 0)]
     }
-    
     @IBAction func submit(_ sender: UIButton) {
         
         registeredStar.append(self.starData)

@@ -10,7 +10,10 @@ import UIKit
 class GraSearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    @IBAction func Back(_ sender: AnyObject) {
+        appDelegate.switchStartViewControllers()
+    }
     var filteredMenu = [Coffee]()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +42,7 @@ class GraSearchViewController: UIViewController, UITableViewDataSource, UITableV
             return 100
         }
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = self.tableView.dequeueReusableCell(withIdentifier: "cell")! as! SearchTableViewCell
+            let cell = self.tableView.dequeueReusableCell(withIdentifier: "cell")! as! GraSearchTableViewCell
             var menu:Coffee
             if(tableView == self.searchDisplayController?.searchResultsTableView){
                 menu = self.filteredMenu[indexPath.row]
