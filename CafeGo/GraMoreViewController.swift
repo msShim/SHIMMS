@@ -55,9 +55,15 @@ class GraMoreViewController: UIViewController, UIPickerViewDelegate, UITableView
         
         view.endEditing(true)
     }
-    func textFieldShouldReturn(userText: UITextField!) -> Bool {
+    private func textFieldShouldReturn(userText: UITextField!) -> Bool {
         textfield.resignFirstResponder()
         return true;
+    }
+    
+    public func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let data = star[row]
+        let stars = NSAttributedString(string: data, attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 15.0)!,NSForegroundColorAttributeName:UIColor.init(red: 1, green: 9/255, blue: 162/255, alpha: 1)])
+        return stars
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

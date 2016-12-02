@@ -29,6 +29,7 @@ class MoreViewController: UIViewController, UIPickerViewDelegate, UITableViewDel
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
         self.starPicker.delegate = self
         self.tableView.delegate = self
@@ -74,9 +75,18 @@ class MoreViewController: UIViewController, UIPickerViewDelegate, UITableViewDel
         return cell
     }
     
-    public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    
+    public func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let data = star[row]
+        let stars = NSAttributedString(string: data, attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 15.0)!,NSForegroundColorAttributeName:UIColor.init(red: 1, green: 9/255, blue: 162/255, alpha: 1)])
+        return stars
+    }
+    public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int ) -> String? {
         return star[row]
     }
+    
+   
+    
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
         return star.count
     }
