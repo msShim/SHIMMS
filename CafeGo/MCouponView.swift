@@ -28,7 +28,7 @@ class MCouponView: UIViewController {
         super.viewDidLoad()
         
         for i in 0..<couponCount {
-            myImages.append("Reservation.png")
+            myImages.append("stamp.png")
         }
         
         for i in 0 ..< myImages.count{

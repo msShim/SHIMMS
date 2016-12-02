@@ -70,10 +70,7 @@ class ServerConnector {
             }
             self.viewController?.present(alert, animated: true, completion: nil)
             alert.addAction(okAction)
-            
         }
-        
-        
     }
     
     //    func vibratePhone() {

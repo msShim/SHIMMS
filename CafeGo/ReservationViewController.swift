@@ -14,7 +14,7 @@ UITableViewDelegate{
     @IBOutlet weak var orderNumber: UILabel!
     @IBOutlet weak var reservationLabel: UILabel!
     @IBAction func cancel(_ sender: AnyObject) {
-        for i in 0..<status.orderList.getAll().count{
+        for _ in 0..<status.orderList.getAll().count{
             status.updateTime(order: "")
             status.initOrder(order: "")
             status.initQuantity(order: "")
@@ -86,14 +86,14 @@ UITableViewDelegate{
             var quantity = list.get().orderQuantity
             
             let a = menu.characters.split(separator: "|").map{ String($0)}
-            let c = quantity.characters.split(separator: "|").map{String($0)}
+            let c = quantity?.characters.split(separator: "|").map{String($0)}
             //오더 메뉴에 저장되어 있는 시간과 메뉴 끊어 주기 용
             for i in 0..<a.count
             {
                 reservationMenu.append(a[i])
                 print(reservationMenu)
-                reservationQuantity.append(c[i])
-                print(c.count)
+                reservationQuantity.append((c?[i])!)
+                print(c?.count)
             }
             //오더 넘버에다가 가격을 넣었슴다~
         }

@@ -1,11 +1,3 @@
-//
-//  OrderList.swift
-//  CafeGo
-//
-//  Created by 심명섭 on 2016. 10. 11..
-//  Copyright © 2016년 Team6. All rights reserved.
-//
-
 import Foundation
 import UIKit
 import CoreData
@@ -24,7 +16,6 @@ class OrderListService {
             print(error)
         }
     }
-
     
     //시간 메뉴 예약 총액 카페이름 수량
     func create(orderMenu: String, orderTime: String, orderNumber:Int64, cafeName:String, orderBook:Bool, orderQuantity:String) -> OrderList {
@@ -106,6 +97,8 @@ class OrderListService {
             orderlist.orderCount = updatedStatus.orderCount
             orderlist.orderBook = updatedStatus.orderBook
             orderlist.orderQuantity = updatedStatus.orderQuantity
+            orderlist.mCoupon = updatedStatus.mCoupon
+            orderlist.gCoupon = updatedStatus.gCoupon
         }
     }
     

@@ -19,7 +19,7 @@ open class OrderViewController: UIViewController, UIPickerViewDataSource, UIPick
     @IBOutlet weak var selectedDate: UILabel!
     @IBOutlet weak var myDatePicker: UIDatePicker!
     @IBAction func datePickerAction(_ sender: AnyObject) {
-        var dateFormatter = DateFormatter()
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
         var strDate = dateFormatter.string(from: myDatePicker.date)
         self.selectedDate.text = strDate
@@ -87,7 +87,7 @@ open class OrderViewController: UIViewController, UIPickerViewDataSource, UIPick
                     status.updateOrderBook(book: true)
                 }
                 
-                ServerManager.sendOrder(phoneNum: status.getOrderList().phoneNumber!, time: status.getOrderList().orderTime!, productName: status.getOrderList().orderMenu!, productCnt: status.getOrderList().orderQuantity, total: status.getOrderList().orderNumber)
+                ServerManager.sendOrder(phoneNum: status.getOrderList().phoneNumber!, time: status.getOrderList().orderTime!, productName: status.getOrderList().orderMenu!, productCnt: status.getOrderList().orderQuantity!, total: status.getOrderList().orderNumber)
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 appDelegate.switchStartViewControllers()
             } else {

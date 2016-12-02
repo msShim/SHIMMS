@@ -16,7 +16,6 @@ class ImageLoader {
             imgView.contentMode = .scaleAspectFit
             downloadImage(url: checkedUrl, imgView: imgView)
         }
-        
     }
     
     func getDataFromUrl(url: URL, completion: @escaping (_ data: Data?, _  response: URLResponse?, _ error: Error?) -> Void) {

@@ -2,10 +2,10 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:CafeGo/OrderList+CoreDataClass.swift">
+      location = "group:OrderList+CoreDataClass.swift">
    </FileRef>
    <FileRef
-      location = "group:CafeGo/OrderList+CoreDataProperties.swift">
+      location = "group:OrderList+CoreDataProperties.swift">
    </FileRef>
    <FileRef
       location = "group:Server">

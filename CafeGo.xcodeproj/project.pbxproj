@@ -48,8 +48,6 @@
 		7DDAF7B51DC5E52500D94ABA /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDAF7B41DC5E52400D94ABA /* TableViewCell.swift */; };
 		7DDAF7B71DC5E66A00D94ABA /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDAF7B61DC5E66A00D94ABA /* ReservationViewController.swift */; };
 		7DDAF7B91DC5E68C00D94ABA /* ReservationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDAF7B81DC5E68C00D94ABA /* ReservationTableViewCell.swift */; };
-		7DDAF7BC1DC5E83800D94ABA /* OrderList+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDAF7BA1DC5E83800D94ABA /* OrderList+CoreDataClass.swift */; };
-		7DDAF7BD1DC5E83800D94ABA /* OrderList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDAF7BB1DC5E83800D94ABA /* OrderList+CoreDataProperties.swift */; };
 		7DDAF7BF1DC6379300D94ABA /* BeforeReserveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDAF7BE1DC6379200D94ABA /* BeforeReserveViewController.swift */; };
 		830ACED21DBA3ED4001C72BB /* ServerConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830ACED11DBA3ED4001C72BB /* ServerConnector.swift */; };
 		830C7BE61DC6E11000E18DF8 /* PreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830C7BE51DC6E11000E18DF8 /* PreViewController.swift */; };
@@ -59,6 +57,8 @@
 		A15EC3D51DE6830A00A806A8 /* GraSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15EC3D41DE6830A00A806A8 /* GraSearchViewController.swift */; };
 		A15EC3D71DE6857200A806A8 /* GraSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15EC3D61DE6857200A806A8 /* GraSearchTableViewCell.swift */; };
 		A17608981DEFEFA20095177A /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17608971DEFEFA20095177A /* TabBarViewController.swift */; };
+		A176089B1DF03AB80095177A /* OrderList+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17608991DF03AB80095177A /* OrderList+CoreDataClass.swift */; };
+		A176089C1DF03AB80095177A /* OrderList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A176089A1DF03AB80095177A /* OrderList+CoreDataProperties.swift */; };
 		A1C6F6001DA3BEC900B9D4FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C6F5FF1DA3BEC900B9D4FE /* AppDelegate.swift */; };
 		A1C6F6081DA3BEC900B9D4FE /* CafeGo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A1C6F6061DA3BEC900B9D4FE /* CafeGo.xcdatamodeld */; };
 		A1C6F60D1DA3BEC900B9D4FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C6F60B1DA3BEC900B9D4FE /* LaunchScreen.storyboard */; };
@@ -116,8 +116,6 @@
 		7DDAF7B41DC5E52400D94ABA /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		7DDAF7B61DC5E66A00D94ABA /* ReservationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
 		7DDAF7B81DC5E68C00D94ABA /* ReservationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationTableViewCell.swift; sourceTree = "<group>"; };
-		7DDAF7BA1DC5E83800D94ABA /* OrderList+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OrderList+CoreDataClass.swift"; sourceTree = "<group>"; };
-		7DDAF7BB1DC5E83800D94ABA /* OrderList+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OrderList+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7DDAF7BE1DC6379200D94ABA /* BeforeReserveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeforeReserveViewController.swift; sourceTree = "<group>"; };
 		830ACED11DBA3ED4001C72BB /* ServerConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerConnector.swift; sourceTree = "<group>"; };
 		830C7BE51DC6E11000E18DF8 /* PreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +125,8 @@
 		A15EC3D41DE6830A00A806A8 /* GraSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraSearchViewController.swift; sourceTree = "<group>"; };
 		A15EC3D61DE6857200A806A8 /* GraSearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraSearchTableViewCell.swift; sourceTree = "<group>"; };
 		A17608971DEFEFA20095177A /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		A17608991DF03AB80095177A /* OrderList+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OrderList+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A176089A1DF03AB80095177A /* OrderList+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OrderList+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A1C6F5FC1DA3BEC900B9D4FE /* CafeGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CafeGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1C6F5FF1DA3BEC900B9D4FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1C6F6071DA3BEC900B9D4FE /* CafeGo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CafeGo.xcdatamodel; sourceTree = "<group>"; };
@@ -273,8 +273,6 @@
 		7D933C991DA8F92900736B46 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				7DDAF7BA1DC5E83800D94ABA /* OrderList+CoreDataClass.swift */,
-				7DDAF7BB1DC5E83800D94ABA /* OrderList+CoreDataProperties.swift */,
 				A1C6F6061DA3BEC900B9D4FE /* CafeGo.xcdatamodeld */,
 				7D933CB01DADC1E400736B46 /* StatusService.swift */,
 				7D933CAA1DADC1D300736B46 /* OrderListService.swift */,
@@ -339,6 +337,8 @@
 		A1C6F5FE1DA3BEC900B9D4FE /* CafeGo */ = {
 			isa = PBXGroup;
 			children = (
+				A17608991DF03AB80095177A /* OrderList+CoreDataClass.swift */,
+				A176089A1DF03AB80095177A /* OrderList+CoreDataProperties.swift */,
 				7D18CA251DC659B3002D41DD /* Lib */,
 				7D933CB21DADCE8600736B46 /* Function */,
 				7D933CA91DADC03000736B46 /* UI */,
@@ -487,7 +487,6 @@
 				7D0F1BD01DDD88C100A31DDC /* Gra2TableViewCell.swift in Sources */,
 				830ACED21DBA3ED4001C72BB /* ServerConnector.swift in Sources */,
 				A1C6F6001DA3BEC900B9D4FE /* AppDelegate.swift in Sources */,
-				7DDAF7BC1DC5E83800D94ABA /* OrderList+CoreDataClass.swift in Sources */,
 				A15EC3D71DE6857200A806A8 /* GraSearchTableViewCell.swift in Sources */,
 				7D0F1BCE1DDD884A00A31DDC /* Gra2MoreViewController.swift in Sources */,
 				7DDAF7B51DC5E52500D94ABA /* TableViewCell.swift in Sources */,
@@ -499,6 +498,7 @@
 				7D933CBE1DAE577000736B46 /* CodeViewController.swift in Sources */,
 				7DD9E01C1DDB2BE3008C2786 /* GraOrderViewController.swift in Sources */,
 				A1C6F6151DA3C29100B9D4FE /* ViewController.swift in Sources */,
+				A176089B1DF03AB80095177A /* OrderList+CoreDataClass.swift in Sources */,
 				7DD9E0241DDC8A75008C2786 /* GraJuiceMViewController.swift in Sources */,
 				7D933CB11DADC1E400736B46 /* StatusService.swift in Sources */,
 				830C7BEA1DC7094700E18DF8 /* ImageLoader.swift in Sources */,
@@ -525,6 +525,7 @@
 				7D0F1BCA1DDD85D300A31DDC /* Gra2JuiceMViewController.swift in Sources */,
 				A15EC3D51DE6830A00A806A8 /* GraSearchViewController.swift in Sources */,
 				7D2483611DC4FA3D00711C65 /* MainViewController.swift in Sources */,
+				A176089C1DF03AB80095177A /* OrderList+CoreDataProperties.swift in Sources */,
 				A1EF48291DAD1025004E68BB /* SelectedOrderTableViewCell.swift in Sources */,
 				7DD9E0201DDB317B008C2786 /* GraCafeViewController.swift in Sources */,
 				7D18CA2B1DC662F8002D41DD /* SWRViewController.swift in Sources */,
@@ -533,7 +534,6 @@
 				A1EF48281DAD1025004E68BB /* OrderViewController.swift in Sources */,
 				7D7DE9C71DD4019700E8A05C /* JuiceMViewController.swift in Sources */,
 				7DD9E02D1DDC9970008C2786 /* GraTableViewCell.swift in Sources */,
-				7DDAF7BD1DC5E83800D94ABA /* OrderList+CoreDataProperties.swift in Sources */,
 				7D0F1BC41DDD843C00A31DDC /* Gra2SelectedOrderTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

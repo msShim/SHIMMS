@@ -11,5 +11,5 @@ import CoreData
 
 
 public class OrderList: NSManagedObject {
-    static let entityName = "OrderList"
+
 }

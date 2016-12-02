@@ -26,7 +26,7 @@ class GraCouponView: UIViewController {
     override func viewDidLoad() {
         
         for i in 0..<couponCount {
-            myImages.append("Reservation.png")
+            myImages.append("coupon.png")
         }
         
         super.viewDidLoad()

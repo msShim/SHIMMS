@@ -25,7 +25,6 @@ open class RBTNode<T: Comparable>: CustomStringConvertible {
     open var parent:  RBTNode<T>!
     open var flag: Int?
     
-    
     open var description: String {
         if self.value == nil {
             return "null"
@@ -148,37 +147,6 @@ open class RBTree<T: Comparable>: CustomStringConvertible {
         let foundNode = findNodeId(root, value: value)
         return foundNode
     }
-    
-    
-//    open func setMenu(_ n: RBTNode<T>, _ view: ViewController) -> RBTNode<T> {
-//        
-//        if n.flag == 0{
-//            n.flag = n.flag! + 1
-//            if n.left !== nullLeaf{
-//                return setMenu(n.left, view)
-//            }
-//        }
-//        
-//        if (n.flag == 1){
-//            n.flag = n.flag! + 1
-//            var item = Coffee()
-//            item.id = n.value?.id
-//            item.name = n.value?.name
-//            item.price = n.value?.price
-//            item.category = n.value?.category
-//            view.makeCell(item)
-//            if n.right !== nullLeaf{
-//                return setMenu(n.right, view)
-//            }
-//        }
-//    
-//        if (n.flag == 2){
-//            n.flag = 0
-//            return setMenu(n.parent, view)
-//        }
-//        
-//        return root
-//    }
     open func categoryMenu(_ n: RBTNode<T>) -> RBTNode<T>{
         if n.flag == 0{
             n.flag = n.flag! + 1

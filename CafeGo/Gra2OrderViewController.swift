@@ -57,7 +57,7 @@ class Gra2OrderViewController:UIViewController, UIPickerViewDataSource, UIPicker
     
     
     @IBAction func dataPickerAction(_ sender: AnyObject) {
-        var dateFormatter = DateFormatter()
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
         var strDate = dateFormatter.string(from: myDatePicker.date)
         self.selectedDate.text = strDate
@@ -69,7 +69,7 @@ class Gra2OrderViewController:UIViewController, UIPickerViewDataSource, UIPicker
         var orderMenuString: String = ""
         var okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default){
             UIAlertAction in
-            ServerManager.sendOrder(phoneNum: status.getOrderList().phoneNumber!, time: status.getOrderList().orderTime!, productName: status.getOrderList().orderMenu!, productCnt: status.getOrderList().orderQuantity, total: status.getOrderList().orderNumber)
+            ServerManager.sendOrder(phoneNum: status.getOrderList().phoneNumber!, time: status.getOrderList().orderTime!, productName: status.getOrderList().orderMenu!, productCnt: status.getOrderList().orderQuantity!, total: status.getOrderList().orderNumber)
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             appDelegate.switchStartViewControllers()
         }

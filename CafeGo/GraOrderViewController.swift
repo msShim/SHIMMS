@@ -69,7 +69,7 @@ class GraOrderViewController: UIViewController, UIPickerViewDataSource, UIPicker
         var orderMenuString: String = ""
         var okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default){
             UIAlertAction in
-            ServerManager.sendOrder(phoneNum: status.getOrderList().phoneNumber!, time: status.getOrderList().orderTime!, productName: status.getOrderList().orderMenu!, productCnt: status.getOrderList().orderQuantity, total: status.getOrderList().orderNumber)
+            ServerManager.sendOrder(phoneNum: status.getOrderList().phoneNumber!, time: status.getOrderList().orderTime!, productName: status.getOrderList().orderMenu!, productCnt: status.getOrderList().orderQuantity!, total: status.getOrderList().orderNumber)
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             appDelegate.switchStartViewControllers()
     }

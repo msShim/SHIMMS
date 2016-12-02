@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="15G1108" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="15G1004" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="OrderList" representedClassName=".OrderList" syncable="YES">
         <attribute name="cafeName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gCoupon" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="mCafeNumber" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="mCoupon" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="orderBook" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="orderCount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="orderMenu" optional="YES" attributeType="String" syncable="YES"/>
@@ -13,6 +15,6 @@
         <attribute name="verification" optional="YES" attributeType="Boolean" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="OrderList" positionX="-2313" positionY="-18" width="128" height="195"/>
+        <element name="OrderList" positionX="-2313" positionY="-18" width="128" height="225"/>
     </elements>
 </model>

@@ -53,7 +53,7 @@ class StatusService {
     func updateQuantity(order:String){
         let menu = getOrderList()
         
-        menu.orderQuantity = addValue(value1: menu.orderQuantity, value2: order)
+        menu.orderQuantity = addValue(value1: menu.orderQuantity!, value2: order)
         orderList.update(updatedStatus: menu)
         self.saveChanges()
     }
@@ -118,6 +118,20 @@ class StatusService {
         
         verification.verification = verif
         orderList.update(updatedStatus: verification)
+        self.saveChanges()
+    }
+    func updateMCoupon(couponNum:String){
+        let coupon = getOrderList()
+        
+        coupon.mCoupon = couponNum
+        orderList.update(updatedStatus: coupon)
+        self.saveChanges()
+    }
+    func updateGCoupon(couponNum:String){
+        let coupon = getOrderList()
+        
+        coupon.gCoupon = couponNum
+        orderList.update(updatedStatus: coupon)
         self.saveChanges()
     }
 }
