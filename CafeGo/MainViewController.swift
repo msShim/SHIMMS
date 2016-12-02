@@ -16,26 +16,25 @@ class MainViewController: UIViewController {
     
     var timer : Timer?
     var index:Int = 0
-    var img:[String]?
     var contentSize: CGFloat = 0
-    
+    var promotion:[String] = ["promotion1.png", "promotion2.jpg", "promotion3.jpeg", "promotion4.jpg"]
     @IBOutlet weak var scrollView: UIScrollView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        promotionImage.frame.origin.y = 667
+        promotionImage.contentMode = UIViewContentMode.scaleAspectFill
         self.setPromotion()
         ServerManager.setWaitingNumber(Mainview: self)
-        promotionImage.contentMode = UIViewContentMode.scaleAspectFit
-        
-        promotionImage.frame.origin.y = 660
         
         scrollView.addSubview(promotionImage)
         
         scrollView.layoutSubviews()
         
-        let timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.setPromotion), userInfo: nil, repeats: true);
-        timer.fire()
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.setPromotion), userInfo: nil, repeats: true);
+        timer?.fire()
         
         contentSize = promotionImage.frame.origin.y
         scrollView.contentSize.height = promotionImage.frame.size.height + promotionImage.frame.origin.y
@@ -46,9 +45,9 @@ class MainViewController: UIViewController {
         var d = "되라"
        
     }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-        
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        timer?.invalidate()
     }
     @IBAction func ClickMCafe(_ sender: AnyObject) {
         status.updateCafeName(order: "명지카페")
@@ -75,18 +74,11 @@ class MainViewController: UIViewController {
     }
     @objc fileprivate func setPromotion(){
 //        // set current page number label
-        switch index{
-        case 0:
-            self.promotionImage.image = UIImage(named: "promotion.jpeg")
-            index += 1
-        case 1:
-            self.promotionImage.image = UIImage(named: "promotion2.jpeg")
-            index += 1
-        case 2:
-            self.promotionImage.image = UIImage(named: "promotion3.jpeg")
+        self.promotionImage.image = UIImage(named: promotion[index])
+        print(promotion[index])
+        index += 1
+        if(index == promotion.count){
             index = 0
-        default:
-            print("out of range!!!!")
         }
     }
 

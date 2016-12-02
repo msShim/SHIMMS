@@ -18,8 +18,12 @@ open class OrderViewController: UIViewController, UIPickerViewDataSource, UIPick
     
     @IBOutlet weak var selectedDate: UILabel!
     @IBOutlet weak var myDatePicker: UIDatePicker!
+    
+    var todaysDate:NSDate = NSDate()
+    var dateFormatter = DateFormatter()
+    
     @IBAction func datePickerAction(_ sender: AnyObject) {
-        let dateFormatter = DateFormatter()
+        dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
         var strDate = dateFormatter.string(from: myDatePicker.date)
         self.selectedDate.text = strDate
@@ -109,16 +113,17 @@ open class OrderViewController: UIViewController, UIPickerViewDataSource, UIPick
         //시간 설정.
 //        self.setTime()
         setMenuList()
+        dateFormatter.dateFormat = "HH:mm"
+        var DateInFormat:String = dateFormatter.string(from: todaysDate as Date)
+
         if(status.getOrderList().orderBook == true){
             alertMessage = "중복 예약은 불가합니다. 원하신다면 예약 취소 후 이용해 주세요."
         } else {
             alertMessage = "예약되었습니다. 감사합니다."
         }
-        var todaysDate:NSDate = NSDate()
-        var dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm"
-        var DateInFormat:String = dateFormatter.string(from: todaysDate as Date)
+
         self.selectedDate.text = DateInFormat
+        print(DateInFormat)
         status.updateTime(order: DateInFormat)
         selectionArr = [beverageSelect, countSelect]
         
