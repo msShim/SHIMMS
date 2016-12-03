@@ -17,7 +17,7 @@ class GraCouponView: UIViewController {
     var yPosition:CGFloat = 100
     var xPosition:CGFloat = 30
     var scrollViewContentSize:CGFloat = 0
-    var couponCount = 5
+    var couponCount = 15
     @IBOutlet weak var scrollVIew: UIScrollView!
     @IBAction func back(_ sender: AnyObject) {
         appDelegate.switchStartViewControllers()
@@ -25,7 +25,7 @@ class GraCouponView: UIViewController {
     }
     override func viewDidLoad() {
         
-        for i in 0..<couponCount {
+        for _ in 0..<couponCount {
             myImages.append("stamp.png")
         }
         
@@ -64,17 +64,23 @@ class GraCouponView: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    public func deleteCoupon(){
-        myImages.removeLast()
+    public func addCoupon(){
+        myImages.append("stamp.png")
+        let i = couponCount + 1
+        couponCount = i
     }
-    public func UseCoupon(){
+    
+    public func deleteCoupon(){ // 쿠폰 취소
+        myImages.removeLast()
+        let i = couponCount - 1
+        couponCount = i
+    }
+    public func UseCoupon(){// 10장 사용
         if(myImages.count > 9){
-            for i in 0 ..< 10 {
+            for _ in 0 ..< 10 {
                 myImages.removeLast()
             }
-            
+            let i = couponCount - 10
+            couponCount = i
         }
-        
-    }
-}
+    }}

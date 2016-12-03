@@ -12,7 +12,7 @@ class MCouponView: UIViewController {
 
     @IBOutlet weak var scrollVIew: UIScrollView!
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    var couponCount = 30
+    var couponCount = 1
     var myImages : [String] = []
    
     let imageWidth:CGFloat = 100
@@ -27,10 +27,9 @@ class MCouponView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for i in 0..<couponCount {
+        for _ in 0..<couponCount {
             myImages.append("stamp.png")
         }
-        
         for i in 0 ..< myImages.count{
             let myImage:UIImage = UIImage(named: myImages[i])!
             let myImageView:UIImageView = UIImageView()
@@ -63,21 +62,25 @@ class MCouponView: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    public func makeCoupon(count: Int ){
-        couponCount = count
+    public func addCoupon(){
+        myImages.append("stamp.png")
+        let i = couponCount + 1
+        couponCount = i
     }
 
     public func deleteCoupon(){ // 쿠폰 취소
         myImages.removeLast()
+        let i = couponCount - 1
+        couponCount = i
     }
     public func UseCoupon(){// 10장 사용
         if(myImages.count > 9){
             for _ in 0 ..< 10 {
                 myImages.removeLast()
             }
-            
+            let i = couponCount - 10
+            couponCount = i
         }
-        
     }
     /*
     // MARK: - Navigation

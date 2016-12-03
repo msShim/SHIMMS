@@ -1404,7 +1404,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="starCell" id="Cks-UO-1Ga" customClass="moreSelectedCell" customModule="CafeGo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="338" height="68"/>
+                                        <rect key="frame" x="0.0" y="28" width="337.5" height="68"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cks-UO-1Ga" id="XWc-rb-HnB">
                                             <frame key="frameInset" width="337.5" height="67"/>
@@ -2030,7 +2030,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Gra2StarCell" rowHeight="61" id="LyG-yd-yt2" customClass="Gra2TableViewCell" customModule="CafeGo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="338" height="61"/>
+                                        <rect key="frame" x="0.0" y="28" width="337.5" height="61"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LyG-yd-yt2" id="Mmr-UW-NSX">
                                             <frame key="frameInset" width="337.5" height="60"/>
@@ -2372,7 +2372,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GraStarCell" rowHeight="67" id="t0D-Di-4jX" customClass="GraTableViewCell" customModule="CafeGo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="338" height="67"/>
+                                        <rect key="frame" x="0.0" y="28" width="337.5" height="67"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="t0D-Di-4jX" id="95D-el-OrK">
                                             <frame key="frameInset" width="337.5" height="66"/>
