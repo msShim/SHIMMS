@@ -1407,7 +1407,7 @@
                                         <rect key="frame" x="0.0" y="28" width="337.5" height="68"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cks-UO-1Ga" id="XWc-rb-HnB">
-                                            <frame key="frameInset" width="337.5" height="67"/>
+                                            <frame key="frameInset" width="338" height="67"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wuF-cx-DQj">
@@ -2033,7 +2033,7 @@
                                         <rect key="frame" x="0.0" y="28" width="337.5" height="61"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LyG-yd-yt2" id="Mmr-UW-NSX">
-                                            <frame key="frameInset" width="337.5" height="60"/>
+                                            <frame key="frameInset" width="338" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="별점" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPk-9D-Jra">
@@ -2375,7 +2375,7 @@
                                         <rect key="frame" x="0.0" y="28" width="337.5" height="67"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="t0D-Di-4jX" id="95D-el-OrK">
-                                            <frame key="frameInset" width="337.5" height="66"/>
+                                            <frame key="frameInset" width="338" height="66"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="is7-AI-gQt">
@@ -3379,7 +3379,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="nR1-e1-Vyk"/>
         <segue reference="eRC-LE-2PU"/>
-        <segue reference="PBr-aW-EOT"/>
+        <segue reference="jAd-V6-i5F"/>
         <segue reference="Wna-0s-R3i"/>
         <segue reference="JOS-uZ-UaD"/>
     </inferredMetricsTieBreakers>

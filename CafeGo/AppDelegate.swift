@@ -13,10 +13,10 @@ var mCoffeeAll:[Coffee] = []
 var mCoffee1:[Coffee] = []
 var mCoffee2:[Coffee] = []
 var mCoffee3:[Coffee] = []
-var g1CoffeeAll:[Coffee] = []
-var g1Coffee1:[Coffee] = []
-var g1Coffee2:[Coffee] = []
-var g1Coffee3:[Coffee] = []
+var gCoffeeAll:[Coffee] = []
+var gCoffee1:[Coffee] = []
+var gCoffee2:[Coffee] = []
+var gCoffee3:[Coffee] = []
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

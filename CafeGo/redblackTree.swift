@@ -167,14 +167,26 @@ open class RBTree<T: Comparable>: CustomStringConvertible {
             if((n.value?.id)! >= 110001 && (n.value?.id)! <= 210000){
                 mCoffeeAll.append(item)
             }
-            if((n.value?.id)! >= 110001 && (n.value?.id)! <= 120001){
+            if((n.value?.id)! >= 110001 && (n.value?.id)! <= 120000){
                 mCoffee1.append(item)
             }
-            if((n.value?.id)! >= 120001 && (n.value?.id)! <= 130001){
+            if((n.value?.id)! >= 120001 && (n.value?.id)! <= 130000){
                 mCoffee2.append(item)
             }
-            if((n.value?.id)! >= 130001 && (n.value?.id)! <= 140001){
+            if((n.value?.id)! >= 130001 && (n.value?.id)! <= 140000){
                 mCoffee3.append(item)
+            }
+            if((n.value?.id)! >= 210001 && (n.value?.id)! <= 310000){
+                gCoffeeAll.append(item)
+            }
+            if((n.value?.id)! >= 210001 && (n.value?.id)! <= 220000){
+                gCoffee1.append(item)
+            }
+            if((n.value?.id)! >= 220001 && (n.value?.id)! <= 230000){
+                gCoffee2.append(item)
+            }
+            if((n.value?.id)! >= 230001 && (n.value?.id)! <= 240000){
+                gCoffee3.append(item)
             }
             if n.right !== nullLeaf{
                 return categoryMenu(n.right)

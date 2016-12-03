@@ -35,7 +35,7 @@ class Gra2TeaViewController: UIViewController {
         
         // set current page number label.
         //        self.teaimg.settr
-        self.teahandler.numberOfPages = mCoffee3.count
+        self.teahandler.numberOfPages = gCoffee3.count
         self.setCurrentPageLabel()
     }
     
@@ -51,8 +51,8 @@ class Gra2TeaViewController: UIViewController {
     // MARK: - Utility functio
     // increase page number on swift left
     func handleSwipeLeft(_ gesture: UISwipeGestureRecognizer){
-        print(mCoffee1.count)
-        if(self.teahandler.currentPage == (mCoffee3.count - 1)){
+        print(gCoffee1.count)
+        if(self.teahandler.currentPage == (gCoffee3.count - 1)){
             self.teahandler.currentPage = 0
             self.setCurrentPageLabel()
         } else {
@@ -68,7 +68,7 @@ class Gra2TeaViewController: UIViewController {
             self.teahandler.currentPage -= 1
             self.setCurrentPageLabel()
         } else {
-            self.teahandler.currentPage = mCoffee3.count - 1
+            self.teahandler.currentPage = gCoffee3.count - 1
             self.setCurrentPageLabel()
         }
     }
@@ -79,9 +79,9 @@ class Gra2TeaViewController: UIViewController {
         // set current page number label
         // set current page number label
         //        teaimg.image = UIImage(named: "cafelatte.png")
-        ImageDownLoader.settingImg(string: mCoffee3[teahandler.currentPage].img!, imgView: teaimg)
-        priceLabel.text = String(describing: mCoffee3[teahandler.currentPage].price!)
-        menuLabel.text = String(describing: mCoffee3[teahandler.currentPage].name!)
+        ImageDownLoader.settingImg(string: gCoffee3[teahandler.currentPage].img!, imgView: teaimg)
+        priceLabel.text = String(describing: gCoffee3[teahandler.currentPage].price!)
+        menuLabel.text = String(describing: gCoffee3[teahandler.currentPage].name!)
         
     }
     
