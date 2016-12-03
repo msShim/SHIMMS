@@ -15,7 +15,7 @@ class GraCouponView: UIViewController {
     let imageWidth:CGFloat = 100
     let imageHeight:CGFloat = 100
     var yPosition:CGFloat = 100
-    var xPosition:CGFloat = 10
+    var xPosition:CGFloat = 30
     var scrollViewContentSize:CGFloat = 0
     var couponCount = 5
     @IBOutlet weak var scrollVIew: UIScrollView!
@@ -26,7 +26,7 @@ class GraCouponView: UIViewController {
     override func viewDidLoad() {
         
         for i in 0..<couponCount {
-            myImages.append("coupon.png")
+            myImages.append("stamp.png")
         }
         
         super.viewDidLoad()
@@ -48,7 +48,7 @@ class GraCouponView: UIViewController {
             xPosition+=imageWidth + spacer
             if(xPosition > 265){
                 yPosition+=imageHeight + spacer
-                xPosition = 10
+                xPosition = 30
             }
             
             scrollVIew.contentSize.height = scrollViewContentSize

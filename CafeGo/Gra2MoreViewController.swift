@@ -74,6 +74,12 @@ class Gra2MoreViewController: UIViewController, UIPickerViewDelegate, UITableVie
         return cell
     }
     
+    
+    public func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let data = star[row]
+        let stars = NSAttributedString(string: data, attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 15.0)!,NSForegroundColorAttributeName:UIColor.init(red: 1, green: 9/255, blue: 162/255, alpha: 1)])
+        return stars
+    }
     public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return star[row]
     }
