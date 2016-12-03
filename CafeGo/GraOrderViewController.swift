@@ -83,7 +83,6 @@ class GraOrderViewController: UIViewController, UIPickerViewDataSource, UIPicker
         registeredArr.append(registeredCount)
         //시간 메뉴 예약 총액 카페이름 수량
         status.updateOrderNumber(order: registeredPrice)
-        status.updateCafeName(order: "명지카페")
         if(status.getOrderList().orderNumber != 0){
             status.updateOrderBook(book: true)
         }
@@ -128,7 +127,7 @@ class GraOrderViewController: UIViewController, UIPickerViewDataSource, UIPicker
     //추가 이벤트
     
     func setMenuList(){
-        for data in mCoffeeAll{
+        for data in gCoffeeAll{
             self.beverageSelect.append(data.name!)
             self.cafeMenu.append(data)
         }

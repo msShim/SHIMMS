@@ -37,7 +37,7 @@ class Gra2JuiceViewController: UIViewController {
         self.view.addGestureRecognizer(self.swipeGestureRight)
         
         // set current page number label.
-        self.juicehandler.numberOfPages = mCoffee2.count
+        self.juicehandler.numberOfPages = gCoffee2.count
         self.setCurrentPageLabel()
     }
     
@@ -53,8 +53,8 @@ class Gra2JuiceViewController: UIViewController {
     // MARK: - Utility functio
     // increase page number on swift left
     func handleSwipeLeft(_ gesture: UISwipeGestureRecognizer){
-        print(mCoffee1.count)
-        if(self.juicehandler.currentPage == (mCoffee2.count - 1)){
+        print(gCoffee1.count)
+        if(self.juicehandler.currentPage == (gCoffee2.count - 1)){
             self.juicehandler.currentPage = 0
             self.setCurrentPageLabel()
         } else {
@@ -70,7 +70,7 @@ class Gra2JuiceViewController: UIViewController {
             self.juicehandler.currentPage -= 1
             self.setCurrentPageLabel()
         } else {
-            self.juicehandler.currentPage = mCoffee2.count - 1
+            self.juicehandler.currentPage = gCoffee2.count - 1
             self.setCurrentPageLabel()
         }
     }
@@ -82,9 +82,9 @@ class Gra2JuiceViewController: UIViewController {
         
         // set current page number label
         //        juiceimg.image = UIImage(named: "cafelatte.png")
-        ImageDownLoader.settingImg(string: mCoffee2[juicehandler.currentPage].img!, imgView: juiceimg)
-        priceLabel.text = String(describing: mCoffee2[juicehandler.currentPage].price!)
-        menuLabel.text = String(describing: mCoffee2[juicehandler.currentPage].name!)
+        ImageDownLoader.settingImg(string: gCoffee2[juicehandler.currentPage].img!, imgView: juiceimg)
+        priceLabel.text = String(describing: gCoffee2[juicehandler.currentPage].price!)
+        menuLabel.text = String(describing: gCoffee2[juicehandler.currentPage].name!)
         
     }
     

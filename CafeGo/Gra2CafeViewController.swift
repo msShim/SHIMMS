@@ -40,7 +40,7 @@ class Gra2CafeViewController: UIViewController {
         
         // set current page number label.
         
-        self.coffeehandler.numberOfPages = mCoffee1.count
+        self.coffeehandler.numberOfPages = gCoffee1.count
         self.setCurrentPageLabel()
     }
     
@@ -56,8 +56,8 @@ class Gra2CafeViewController: UIViewController {
     // MARK: - Utility functio
     // increase page number on swift left
     func handleSwipeLeft(_ gesture: UISwipeGestureRecognizer){
-        print(mCoffee1.count)
-        if(self.coffeehandler.currentPage == (mCoffee1.count - 1)){
+        print(gCoffee1.count)
+        if(self.coffeehandler.currentPage == (gCoffee1.count - 1)){
             self.coffeehandler.currentPage = 0
             self.setCurrentPageLabel()
         } else {
@@ -72,7 +72,7 @@ class Gra2CafeViewController: UIViewController {
             self.coffeehandler.currentPage -= 1
             self.setCurrentPageLabel()
         } else {
-            self.coffeehandler.currentPage = mCoffee1.count - 1
+            self.coffeehandler.currentPage = gCoffee1.count - 1
             self.setCurrentPageLabel()
         }
     }
@@ -80,15 +80,15 @@ class Gra2CafeViewController: UIViewController {
     // set current page number label
     fileprivate func setCurrentPageLabel(){
         
-        //        var productImg = mCoffee1[coffeehandler.currentPage].img
+        //        var productImg = gCoffee1[coffeehandler.currentPage].img
         //        var escapedAddress = productImg?.addingPercentEncoding( withAllowedCharacters: .urlQueryAllowed)
         //        print(escapedAddress)
         //        if let checkedUrl = URL(string: "http://192.168.40.3:3000/images/" + escapedAddress!) {
         //            coffeeimg.contentMode = .scaleAspectFit
         //            downloadImage(url: checkedUrl
         //        }
-        ImageDownLoader.settingImg(string: mCoffee1[coffeehandler.currentPage].img!, imgView: coffeeimg)
-        priceLabel.text = String(describing: mCoffee1[coffeehandler.currentPage].price!)
-        nameLabel.text = String(describing: mCoffee1[coffeehandler.currentPage].name!)
+        ImageDownLoader.settingImg(string: gCoffee1[coffeehandler.currentPage].img!, imgView: coffeeimg)
+        priceLabel.text = String(describing: gCoffee1[coffeehandler.currentPage].price!)
+        nameLabel.text = String(describing: gCoffee1[coffeehandler.currentPage].name!)
     }
 }
