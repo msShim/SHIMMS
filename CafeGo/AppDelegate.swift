@@ -23,7 +23,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        UINavigationBar.appearance().titleTextAttributes = [
+            NSFontAttributeName: (UIFont(name: "RixFreestyle_Pro", size: 35.0))!,
+            NSForegroundColorAttributeName : UIColor(red: 1, green: 9/255, blue: 162/255, alpha: 1)
+        ]
+        UINavigationBar.appearance().barTintColor = UIColor.black
+        UITabBar.appearance().tintColor = UIColor(red: 1, green: 9/255.0, blue: 162/255, alpha: 1)
+
+//        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.gray], for:.normal)
+//        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.red], for:.selected)
         
+
         ServerManager.connect()
         print("try connect")
         return true

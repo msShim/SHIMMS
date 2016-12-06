@@ -22,13 +22,18 @@ open class OrderViewController: UIViewController, UIPickerViewDataSource, UIPick
     var todaysDate:NSDate = NSDate()
     var dateFormatter = DateFormatter()
     
+    @IBAction func Back(_ sender: AnyObject) {
+        
+    }
     @IBAction func datePickerAction(_ sender: AnyObject) {
         dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
         var strDate = dateFormatter.string(from: myDatePicker.date)
+        
         self.selectedDate.text = strDate
         status.updateTime(order: strDate)
     }
+    
     var timeSelect : [String] = []
     var minuteSelect : [String] = []
     var beverageSelect:[String] = []
@@ -105,17 +110,20 @@ open class OrderViewController: UIViewController, UIPickerViewDataSource, UIPick
         alert.addAction(okAction)
     }
     
-    
+    @IBAction func back(_ sender: AnyObject) {
+        self.navigationController?.popViewController(animated: true)
+    }
     
     override open func viewDidLoad() {
         
         super.viewDidLoad()
-        //시간 설정.
+        
+       //시간 설정.
 //        self.setTime()
         setMenuList()
         dateFormatter.dateFormat = "HH:mm"
         var DateInFormat:String = dateFormatter.string(from: todaysDate as Date)
-
+        self.myDatePicker.setValue(UIColor.init(red: 1, green: 9/255, blue: 162/255, alpha: 1), forKey: "textColor")
         if(status.getOrderList().orderBook == true){
             alertMessage = "중복 예약은 불가합니다. 원하신다면 예약 취소 후 이용해 주세요."
         } else {
@@ -181,6 +189,7 @@ open class OrderViewController: UIViewController, UIPickerViewDataSource, UIPick
         countData = countSelect[pickerView.selectedRow(inComponent: 1)]
     }
     
+    
     /********** 테이블 뷰 ***************/
     //로우 수
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -193,6 +202,11 @@ open class OrderViewController: UIViewController, UIPickerViewDataSource, UIPick
         cell.beverageLabel.text = registeredBeverage[indexPath.row]
         cell.countLabel.text = registeredCount[indexPath.row]
         return cell
+    }
+    override open func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let backItem = UIBarButtonItem()
+        backItem.title = "Back"
+        navigationItem.backBarButtonItem = backItem // This will show in the next view controller being pushed
     }
     //추가 버튼
     @IBAction func addButton(_ sender: UIButton) {

@@ -63,6 +63,9 @@ class Gra2OrderViewController:UIViewController, UIPickerViewDataSource, UIPicker
         self.selectedDate.text = strDate
         status.updateTime(order: strDate)
     }
+    @IBAction func back(_ sender: AnyObject) {
+        self.navigationController?.popViewController(animated: true)
+    }
     @IBAction func order(_ sender: UIButton) {
         let alert = UIAlertController(title: "주문창", message: "예약하고 튀면 듀금", preferredStyle: UIAlertControllerStyle.alert)
         let list : OrderListService = OrderListService()
@@ -102,6 +105,7 @@ class Gra2OrderViewController:UIViewController, UIPickerViewDataSource, UIPicker
         var todaysDate:NSDate = NSDate()
         var dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
+        self.myDatePicker.setValue(UIColor.init(red: 1, green: 9/255, blue: 162/255, alpha: 1), forKey: "textColor")
         var DateInFormat:String = dateFormatter.string(from: todaysDate as Date)
         self.selectedDate.text = DateInFormat
         status.updateTime(order: DateInFormat)

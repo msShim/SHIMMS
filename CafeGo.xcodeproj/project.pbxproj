@@ -56,9 +56,9 @@
 		A15EC3D11DE666C400A806A8 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15EC3D01DE666C400A806A8 /* SearchTableViewCell.swift */; };
 		A15EC3D51DE6830A00A806A8 /* GraSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15EC3D41DE6830A00A806A8 /* GraSearchViewController.swift */; };
 		A15EC3D71DE6857200A806A8 /* GraSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15EC3D61DE6857200A806A8 /* GraSearchTableViewCell.swift */; };
-		A17608981DEFEFA20095177A /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17608971DEFEFA20095177A /* TabBarViewController.swift */; };
 		A176089B1DF03AB80095177A /* OrderList+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17608991DF03AB80095177A /* OrderList+CoreDataClass.swift */; };
 		A176089C1DF03AB80095177A /* OrderList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A176089A1DF03AB80095177A /* OrderList+CoreDataProperties.swift */; };
+		A1BC33CD1DF3D32700C1D532 /* RixFreestyle_Pro Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A1BC33CC1DF3D26500C1D532 /* RixFreestyle_Pro Bold.otf */; };
 		A1C6F6001DA3BEC900B9D4FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C6F5FF1DA3BEC900B9D4FE /* AppDelegate.swift */; };
 		A1C6F6081DA3BEC900B9D4FE /* CafeGo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A1C6F6061DA3BEC900B9D4FE /* CafeGo.xcdatamodeld */; };
 		A1C6F60D1DA3BEC900B9D4FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C6F60B1DA3BEC900B9D4FE /* LaunchScreen.storyboard */; };
@@ -124,9 +124,9 @@
 		A15EC3D01DE666C400A806A8 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		A15EC3D41DE6830A00A806A8 /* GraSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraSearchViewController.swift; sourceTree = "<group>"; };
 		A15EC3D61DE6857200A806A8 /* GraSearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraSearchTableViewCell.swift; sourceTree = "<group>"; };
-		A17608971DEFEFA20095177A /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		A17608991DF03AB80095177A /* OrderList+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OrderList+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A176089A1DF03AB80095177A /* OrderList+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OrderList+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A1BC33CC1DF3D26500C1D532 /* RixFreestyle_Pro Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RixFreestyle_Pro Bold.otf"; sourceTree = "<group>"; };
 		A1C6F5FC1DA3BEC900B9D4FE /* CafeGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CafeGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1C6F5FF1DA3BEC900B9D4FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1C6F6071DA3BEC900B9D4FE /* CafeGo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CafeGo.xcdatamodel; sourceTree = "<group>"; };
@@ -203,7 +203,6 @@
 				7D933CBD1DAE577000736B46 /* CodeViewController.swift */,
 				7DD82F4F1DE9767100AA487C /* MCouponView.swift */,
 				7DD82F511DE9B26400AA487C /* GraCouponView.swift */,
-				A17608971DEFEFA20095177A /* TabBarViewController.swift */,
 			);
 			name = "New Group";
 			sourceTree = "<group>";
@@ -319,6 +318,7 @@
 		A1C6F5F31DA3BEC900B9D4FE = {
 			isa = PBXGroup;
 			children = (
+				A1BC33CC1DF3D26500C1D532 /* RixFreestyle_Pro Bold.otf */,
 				A1C6F5FE1DA3BEC900B9D4FE /* CafeGo */,
 				A1C6F5FD1DA3BEC900B9D4FE /* Products */,
 				86273AE514881CFE62B9CAC8 /* Pods */,
@@ -415,6 +415,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1BC33CD1DF3D32700C1D532 /* RixFreestyle_Pro Bold.otf in Resources */,
 				7D2483361DBE041800711C65 /* cafelatte.png in Resources */,
 				A1EF482D1DAD1241004E68BB /* Main.storyboard in Resources */,
 				A1EF482F1DAD1375004E68BB /* Images.xcassets in Resources */,
@@ -490,7 +491,6 @@
 				A15EC3D71DE6857200A806A8 /* GraSearchTableViewCell.swift in Sources */,
 				7D0F1BCE1DDD884A00A31DDC /* Gra2MoreViewController.swift in Sources */,
 				7DDAF7B51DC5E52500D94ABA /* TableViewCell.swift in Sources */,
-				A17608981DEFEFA20095177A /* TabBarViewController.swift in Sources */,
 				7D933C711DA728A300736B46 /* redblackTree.swift in Sources */,
 				7D0F1BC11DDD82C100A31DDC /* Gra2OrderViewController.swift in Sources */,
 				A1EF48271DAD1025004E68BB /* MoreViewController.swift in Sources */,
