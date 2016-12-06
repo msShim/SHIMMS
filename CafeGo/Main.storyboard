@@ -706,19 +706,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="menu" translatesAutoresizingMaskIntoConstraints="NO" id="qyx-ia-xq9">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="menu" translatesAutoresizingMaskIntoConstraints="NO" id="qyx-ia-xq9">
                                 <frame key="frameInset" minX="1" width="374" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XdE-3i-KrV">
-                                <frame key="frameInset" minX="14" minY="334" width="344" height="172"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XdE-3i-KrV">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="QEo-ir-yNW" customClass="SelectedOrderTableViewCell" customModule="CafeGo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="344" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="338" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QEo-ir-yNW" id="72G-YI-gcN">
-                                            <frame key="frameInset" width="344" height="43"/>
+                                            <frame key="frameInset" width="338" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PMw-6h-Z5W">
@@ -759,8 +757,10 @@
                                     <outlet property="delegate" destination="gkD-tR-FxR" id="Mpr-64-DnB"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPT-GH-IjC">
-                                <frame key="frameInset" minX="122" minY="588" width="107" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPT-GH-IjC">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="zjH-tp-sKL"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="RixFreestylePB" family="RixFreestyle_Pro" pointSize="27"/>
                                 <state key="normal" title="완료">
                                     <color key="titleColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -769,20 +769,21 @@
                                     <action selector="order:" destination="gkD-tR-FxR" eventType="touchUpInside" id="Ker-aU-jHv"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="총액" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k3C-0P-9m7">
-                                <frame key="frameInset" minX="16" minY="548" width="95" height="35"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="총액" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k3C-0P-9m7">
                                 <fontDescription key="fontDescription" name="RixFreestylePB" family="RixFreestyle_Pro" pointSize="27"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgC-V2-Qxf">
-                                <frame key="frameInset" minX="249" minY="548" width="53" height="34"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgC-V2-Qxf">
                                 <fontDescription key="fontDescription" name="RixFreestylePB" family="RixFreestyle_Pro" pointSize="27"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p37-3q-NgA">
-                                <frame key="frameInset" minX="122" minY="548" width="106" height="35"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p37-3q-NgA">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="4NG-vF-CCJ"/>
+                                    <constraint firstAttribute="height" constant="35" id="Jl6-Ig-Sby"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="RixFreestylePB" family="RixFreestyle_Pro" pointSize="27"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -797,20 +798,24 @@
                                     <action selector="datePickerAction:" destination="gkD-tR-FxR" eventType="valueChanged" id="6eb-tQ-RPJ"/>
                                 </connections>
                             </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDJ-8t-S4W">
-                                <frame key="frameInset" minX="138" minY="510" width="132" height="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDJ-8t-S4W">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="beL-vC-iHW"/>
+                                    <constraint firstAttribute="width" constant="132" id="cO7-IC-G3H"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="RixFreestylePB" family="RixFreestyle_Pro" pointSize="27"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="예약시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mbk-QO-6Iu">
-                                <frame key="frameInset" minX="16" minY="514" width="108" height="26"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="예약시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mbk-QO-6Iu">
                                 <fontDescription key="fontDescription" name="RixFreestylePB" family="RixFreestyle_Pro" pointSize="27"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zut-d4-Oza">
-                                <frame key="frameInset" minX="122" minY="270" width="132" height="56"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zut-d4-Oza">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="hPo-km-vEi"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="RixFreestylePB" family="RixFreestyle_Pro" pointSize="40"/>
                                 <state key="normal" title="추가">
                                     <color key="titleColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -831,27 +836,33 @@
                         <constraints>
                             <constraint firstItem="H6w-OD-Aet" firstAttribute="centerX" secondItem="bbc-1E-OFv" secondAttribute="centerX" id="0Oa-aj-OHP"/>
                             <constraint firstItem="cPT-GH-IjC" firstAttribute="centerX" secondItem="bbc-1E-OFv" secondAttribute="centerX" id="10c-OU-P12"/>
-                            <constraint firstItem="xgC-V2-Qxf" firstAttribute="centerX" secondItem="bbc-1E-OFv" secondAttribute="centerX" id="8br-7Y-ncE"/>
+                            <constraint firstItem="XdE-3i-KrV" firstAttribute="height" secondItem="bbc-1E-OFv" secondAttribute="height" multiplier="0.27" id="2nm-lq-Ih0"/>
+                            <constraint firstItem="qyx-ia-xq9" firstAttribute="centerX" secondItem="bbc-1E-OFv" secondAttribute="centerX" id="3QH-8K-Gjr"/>
+                            <constraint firstItem="xgC-V2-Qxf" firstAttribute="centerX" secondItem="bbc-1E-OFv" secondAttribute="centerX" multiplier="1.6" id="8br-7Y-ncE"/>
                             <constraint firstItem="AKu-vn-xfb" firstAttribute="centerY" secondItem="bbc-1E-OFv" secondAttribute="centerY" multiplier="0.6" id="ETJ-6H-nj4"/>
-                            <constraint firstItem="cPT-GH-IjC" firstAttribute="centerY" secondItem="bbc-1E-OFv" secondAttribute="centerY" id="J07-4d-Ddj"/>
+                            <constraint firstItem="cPT-GH-IjC" firstAttribute="centerY" secondItem="bbc-1E-OFv" secondAttribute="centerY" multiplier="1.8" id="J07-4d-Ddj"/>
                             <constraint firstItem="Zut-d4-Oza" firstAttribute="centerX" secondItem="bbc-1E-OFv" secondAttribute="centerX" id="LtE-3V-Yfx"/>
                             <constraint firstItem="p37-3q-NgA" firstAttribute="centerX" secondItem="bbc-1E-OFv" secondAttribute="centerX" id="StD-CN-HD9"/>
                             <constraint firstItem="H6w-OD-Aet" firstAttribute="centerY" secondItem="bbc-1E-OFv" secondAttribute="centerY" multiplier="0.3" id="V0s-xo-jOa"/>
                             <constraint firstItem="AKu-vn-xfb" firstAttribute="height" secondItem="bbc-1E-OFv" secondAttribute="height" multiplier="0.22" id="V2k-Rw-SP3"/>
-                            <constraint firstItem="p37-3q-NgA" firstAttribute="centerY" secondItem="bbc-1E-OFv" secondAttribute="centerY" id="VGV-ah-RGF"/>
-                            <constraint firstItem="k3C-0P-9m7" firstAttribute="centerY" secondItem="bbc-1E-OFv" secondAttribute="centerY" id="YkN-bW-vuD"/>
+                            <constraint firstItem="p37-3q-NgA" firstAttribute="centerY" secondItem="bbc-1E-OFv" secondAttribute="centerY" multiplier="1.7" id="VGV-ah-RGF"/>
+                            <constraint firstItem="qyx-ia-xq9" firstAttribute="height" secondItem="bbc-1E-OFv" secondAttribute="height" id="Xv6-4Z-QKT"/>
+                            <constraint firstItem="qyx-ia-xq9" firstAttribute="centerY" secondItem="bbc-1E-OFv" secondAttribute="centerY" id="YDk-bU-3hs"/>
+                            <constraint firstItem="k3C-0P-9m7" firstAttribute="centerY" secondItem="bbc-1E-OFv" secondAttribute="centerY" multiplier="1.7" id="YkN-bW-vuD"/>
+                            <constraint firstItem="qyx-ia-xq9" firstAttribute="width" secondItem="bbc-1E-OFv" secondAttribute="width" id="YpU-5j-AlC"/>
                             <constraint firstItem="AKu-vn-xfb" firstAttribute="centerX" secondItem="bbc-1E-OFv" secondAttribute="centerX" id="a28-eb-rhl"/>
-                            <constraint firstItem="k3C-0P-9m7" firstAttribute="centerX" secondItem="bbc-1E-OFv" secondAttribute="centerX" id="ajx-mg-Pih"/>
-                            <constraint firstItem="XdE-3i-KrV" firstAttribute="centerY" secondItem="bbc-1E-OFv" secondAttribute="centerY" id="fay-ag-2cu"/>
+                            <constraint firstItem="k3C-0P-9m7" firstAttribute="centerX" secondItem="bbc-1E-OFv" secondAttribute="centerX" multiplier="0.2" id="ajx-mg-Pih"/>
+                            <constraint firstItem="XdE-3i-KrV" firstAttribute="width" secondItem="bbc-1E-OFv" secondAttribute="width" multiplier="0.9" id="f4I-ls-cFr"/>
+                            <constraint firstItem="XdE-3i-KrV" firstAttribute="centerY" secondItem="bbc-1E-OFv" secondAttribute="centerY" multiplier="1.25" id="fay-ag-2cu"/>
                             <constraint firstItem="H6w-OD-Aet" firstAttribute="width" secondItem="bbc-1E-OFv" secondAttribute="width" id="gsF-UP-LIw"/>
                             <constraint firstItem="AKu-vn-xfb" firstAttribute="width" secondItem="bbc-1E-OFv" secondAttribute="width" id="kJ4-Pu-Kqq"/>
                             <constraint firstItem="lDJ-8t-S4W" firstAttribute="centerX" secondItem="bbc-1E-OFv" secondAttribute="centerX" id="kzP-rA-lPj"/>
-                            <constraint firstItem="Mbk-QO-6Iu" firstAttribute="centerX" secondItem="bbc-1E-OFv" secondAttribute="centerX" id="m7n-hv-cXw"/>
+                            <constraint firstItem="Mbk-QO-6Iu" firstAttribute="centerX" secondItem="bbc-1E-OFv" secondAttribute="centerX" multiplier="0.3" id="m7n-hv-cXw"/>
                             <constraint firstItem="XdE-3i-KrV" firstAttribute="centerX" secondItem="bbc-1E-OFv" secondAttribute="centerX" id="o7u-lR-KKR"/>
-                            <constraint firstItem="xgC-V2-Qxf" firstAttribute="centerY" secondItem="bbc-1E-OFv" secondAttribute="centerY" id="oId-IF-JZ6"/>
-                            <constraint firstItem="lDJ-8t-S4W" firstAttribute="centerY" secondItem="bbc-1E-OFv" secondAttribute="centerY" id="pjR-8A-qD7"/>
-                            <constraint firstItem="Mbk-QO-6Iu" firstAttribute="centerY" secondItem="bbc-1E-OFv" secondAttribute="centerY" id="rU4-kQ-jaE"/>
-                            <constraint firstItem="Zut-d4-Oza" firstAttribute="centerY" secondItem="bbc-1E-OFv" secondAttribute="centerY" id="tcz-dr-dsE"/>
+                            <constraint firstItem="xgC-V2-Qxf" firstAttribute="centerY" secondItem="bbc-1E-OFv" secondAttribute="centerY" multiplier="1.7" id="oId-IF-JZ6"/>
+                            <constraint firstItem="lDJ-8t-S4W" firstAttribute="centerY" secondItem="bbc-1E-OFv" secondAttribute="centerY" multiplier="1.6" id="pjR-8A-qD7"/>
+                            <constraint firstItem="Mbk-QO-6Iu" firstAttribute="centerY" secondItem="bbc-1E-OFv" secondAttribute="centerY" multiplier="1.6" id="rU4-kQ-jaE"/>
+                            <constraint firstItem="Zut-d4-Oza" firstAttribute="centerY" secondItem="bbc-1E-OFv" secondAttribute="centerY" multiplier="0.9" id="tcz-dr-dsE"/>
                             <constraint firstItem="H6w-OD-Aet" firstAttribute="height" secondItem="bbc-1E-OFv" secondAttribute="height" multiplier="0.12" id="yEQ-yV-yYa"/>
                         </constraints>
                     </view>
