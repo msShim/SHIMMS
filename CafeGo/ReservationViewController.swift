@@ -15,6 +15,7 @@ UITableViewDelegate{
     @IBOutlet weak var reservationLabel: UILabel!
     @IBAction func cancel(_ sender: AnyObject) {
         for _ in 0..<status.orderList.getAll().count{
+
             status.updateTime(order: "")
             status.initOrder(order: "")
             status.initQuantity(order: "")

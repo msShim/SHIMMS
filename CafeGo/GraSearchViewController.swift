@@ -35,7 +35,7 @@ class GraSearchViewController: UIViewController, UITableViewDataSource, UITableV
             if(tableView == self.searchDisplayController?.searchResultsTableView){
                 return self.filteredMenu.count
             } else {
-                return mCoffeeAll.count
+                return gCoffeeAll.count
             }
         }
         func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -48,11 +48,12 @@ class GraSearchViewController: UIViewController, UITableViewDataSource, UITableV
                 menu = self.filteredMenu[indexPath.row]
             }
             else{
-                menu = mCoffeeAll[indexPath.row]
+                
+                menu = gCoffeeAll[indexPath.row]
             }
             cell.cafeName.text = "그라지에"
             cell.menuName.text = menu.name
-            ImageDownLoader.settingImg(string: mCoffeeAll[indexPath.row].img!, imgView: cell.img)
+            ImageDownLoader.settingImg(string: gCoffeeAll[indexPath.row].img!, imgView: cell.img)
             cell.price.text = String(describing: menu.price!)
             return cell
         }
@@ -63,14 +64,14 @@ class GraSearchViewController: UIViewController, UITableViewDataSource, UITableV
             if(tableView == self.searchDisplayController?.searchResultsTableView){
                 menu = self.filteredMenu[indexPath.row]
             } else {
-                menu = mCoffeeAll[indexPath.row]
+                menu = gCoffeeAll[indexPath.row]
             }
         }
         
         // mark: Search
         
         func filterContentForSearchText(searchText: String, scope: String = "Title"){
-            self.filteredMenu = mCoffeeAll.filter({( menu:Coffee) -> Bool in
+            self.filteredMenu = gCoffeeAll.filter({( menu:Coffee) -> Bool in
                 var categoryMatch = (scope == "Title")
                 var stringMatch = menu.name?.range(of: searchText)
                 
@@ -89,15 +90,10 @@ class GraSearchViewController: UIViewController, UITableViewDataSource, UITableV
         }
         /*
          // MARK: - Navigation
-         
          // In a storyboard-based application, you will often want to do a little preparation before navigation
          override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
          // Get the new view controller using segue.destinationViewController.
          // Pass the selected object to the new view controller.
          }
          */
-        
     }
-
-
-

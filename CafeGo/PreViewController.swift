@@ -13,7 +13,9 @@ class PreviewViewController: UIPageViewController, UIPageViewControllerDataSourc
     lazy var VCArr: [UIViewController] = {
         return [self.VCInstance(name: "FirstVC"),
                 self.VCInstance(name: "SecondVC"),
-                self.VCInstance(name: "ThirdVC")]
+                self.VCInstance(name: "ThirdVC"),
+                self.VCInstance(name: "FourthVC")]
+        
     }()
     
     private func VCInstance(name:String) -> UIViewController {
