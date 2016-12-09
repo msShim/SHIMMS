@@ -14,6 +14,33 @@ router.get('/', function(req, res, next) {
   });
 });
 
+router.get('/cafe1', function(req, res, next) {
+  Order.find({cafeID: 1, soldOut: false, isCancel: false}, function(err, orders){
+    if(err) {
+      return next(err);
+    }
+    res.render('order/list', { orders: orders });
+  });
+});
+
+router.get('/cafe2', function(req, res, next) {
+  Order.find({cafeID: 2, soldOut: false, isCancel: false}, function(err, orders){
+    if(err) {
+      return next(err);
+    }
+    res.render('order/list', { orders: orders });
+  });
+});
+
+router.get('/cafe3', function(req, res, next) {
+  Order.find({cafeID: 3, soldOut: false, isCancel: false}, function(err, orders){
+    if(err) {
+      return next(err);
+    }
+    res.render('order/list', { orders: orders });
+  });
+});
+
 router.get('/soldOut/:orderCnt', function(req, res, next) {
   Order.findOne({orderCnt: req.params.orderCnt}, function(err, order){
     if(err) {
@@ -24,6 +51,42 @@ router.get('/soldOut/:orderCnt', function(req, res, next) {
       if(err) {
         return next(err);
       }
+      if(order.cafeID === 1){
+        for(var i in clientsManager.ordersCafe1){
+          if(clientsManager.ordersCafe1[i].cafeID = order.cafeID){
+            console.log("제거");
+            clientsManager.ordersCafe1.splice(i, 1);
+            break;
+          }
+        }
+      }
+      else if(order.cafeID === 2){
+        for(var i in clientsManager.ordersCafe2){
+          if(clientsManager.ordersCafe2[i].cafeID = order.cafeID){
+            console.log("제거");
+            clientsManager.ordersCafe2.splice(i, 1);
+            break;
+          }
+        }
+      }
+      else {
+        for(var i in clientsManager.ordersCafe3){
+          if(clientsManager.ordersCafe3[i].cafeID = order.cafeID){
+            console.log("제거");
+            clientsManager.ordersCafe3.splice(i, 1);
+            break;
+          }
+        }
+      }
+      for(var j in clientsManager.clients) {
+        console.log(clientsManager.clients[j].phoneNum);
+        if(clientsManager.clients[j].phoneNum.toString() == order.phoneNum){
+          console.log('브래이크됨');
+          clientsManager.clients[j].socket.emit('soldOut');
+          break;
+        }
+      }
+      clientsManager.io.emit('waitingStatus', clientsManager.ordersCafe1.length, clientsManager.ordersCafe2.length, clientsManager.ordersCafe3.length)
       return res.redirect('/orders');
     });
   });

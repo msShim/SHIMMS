@@ -9,7 +9,8 @@ var schema = new Schema({
   contents: {type: Array, required: true},
   total: {type:Number, required: true},
   soldOut: {type:Boolean, required: true, default: false},
-  isCancel: {type:Boolean, required: true, default: false}
+  isCancel: {type:Boolean, required: true, default: false},
+  cafeID: {type: Number, required: true}
 }, {
   toJSON: {virtuals: true},
   toObject: {virtuals: true}

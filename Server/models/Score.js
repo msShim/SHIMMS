@@ -5,7 +5,8 @@ var schema = new Schema({
   phoneNum: {type: String, required: true},
   text: {type: String, default: "" },
   score: {type: Number, required: true, default: 0},
-  createAt: {type: Date, default: Date.now}
+  createAt: {type: Date, default: Date.now},
+  cafeID: {type: Number, required: true}
 }, {
   toJSON: {virtuals: true},
   toObject: {virtuals: true}

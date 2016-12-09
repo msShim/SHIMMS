@@ -46,6 +46,7 @@ function Client(socket) {
   });
 
   this.socket.on("sendOrder", function(data){
+    console.log(data);
     var productNames = data[2].split('|');
     var productCtns = data[3].split('|');
     var times = data[1].split(':');
@@ -66,12 +67,23 @@ function Client(socket) {
       limitTime = new Date();
       limitTime.setHours(times[0]);
       limitTime.setMinutes(times[1]);
+      var cafeID;
+      if(data[5] === "명지카페"){
+        cafeID = 1;
+      }
+      else if(data[5] === "그라지에1"){
+        cafeID = 2;
+      }
+      else {
+        cafeID = 3;
+      }
       var newOrder = new Order({
         orderCnt: orders.length+1,
         phoneNum: data[0],
         limitTime: limitTime,
         contents: contents,
-        total: data[4].toString()
+        total: data[4].toString(),
+        cafeID: cafeID
       });
       orderCnt = newOrder.orderCnt;
       newOrder.save(function(err){
@@ -79,9 +91,36 @@ function Client(socket) {
           return;
         }
         self.socket.emit('orderSuccess', orderCnt);
+        var order = {
+          orderCnt: orderCnt
+        }
+        if(cafeID === 1){
+          self.manager.ordersCafe1.push(order);
+          console.log("Cafe1 order length : " + self.manager.ordersCafe1.length);
+        }
+        else if(data[5] === "그라지에1"){
+          self.manager.ordersCafe2.push(order);
+          console.log("Cafe2 order length : " + self.manager.ordersCafe2.length);
+        }
+        else {
+          self.manager.ordersCafe3.push(order);
+          console.log("Cafe3 order length : " + self.manager.ordersCafe3.length);
+        }
         console.log('주문 등록 성공!');
+        // var waitingData = {
+        //   cafe1: self.manager.ordersCafe1.length,
+        //   cafe2: self.manager.ordersCafe2.length,
+        //   cafe3: self.manager.ordersCafe3.length
+        // };
+        self.manager.io.emit('waitingStatus', self.manager.ordersCafe1.length, self.manager.ordersCafe2.length, self.manager.ordersCafe3.length);
       });
     });
+  });
+
+  this.socket.on('soldOut', function(){
+    console.log('soldOut');
+    self.socket.emit('soldOut', "");
+
   });
 
   this.socket.on('disconnect', function(){
@@ -102,6 +141,9 @@ function ClientsManager() {
   this.io = require('socket.io')(server);
   this.clients = [];
   // this.cnt = 0;
+  this.ordersCafe1 = [];
+  this.ordersCafe2 = [];
+  this.ordersCafe3 = [];
   this.addHandlers();
 }
 
