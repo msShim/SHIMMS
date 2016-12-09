@@ -75,9 +75,17 @@ open class OrderViewController: UIViewController, UIPickerViewDataSource, UIPick
     @IBOutlet weak var selectedRecord: UITableView!
     
     @IBAction func order(_ sender: UIButton) {
+        if(registeredPrice != 0){
+            alertMessage = "예약되었습니다. 감사합니다."
+        } else {
+            alertMessage = "메뉴를 선택해 주세요."
+        }
         let alert = UIAlertController(title: "주문창", message: alertMessage, preferredStyle: UIAlertControllerStyle.alert)
         let list : OrderListService = OrderListService()
         var orderMenuString: String = ""
+        var failAction = UIAlertAction(title: "FAIL", style: UIAlertActionStyle.default){
+            UIAlertAction in
+        }
         var okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default){
             UIAlertAction in
             if(status.getOrderList().orderBook == false){
@@ -107,7 +115,11 @@ open class OrderViewController: UIViewController, UIPickerViewDataSource, UIPick
         //실험.
         print(list.get().orderMenu , list.get().phoneNumber,list.get().orderNumber)
         self.present(alert, animated: true, completion: nil)
-        alert.addAction(okAction)
+        if(countSum() > 1){
+            alert.addAction(okAction)
+        } else {
+            alert.addAction(failAction)
+        }
     }
     
     @IBAction func back(_ sender: AnyObject) {
@@ -127,7 +139,11 @@ open class OrderViewController: UIViewController, UIPickerViewDataSource, UIPick
         if(status.getOrderList().orderBook == true){
             alertMessage = "중복 예약은 불가합니다. 원하신다면 예약 취소 후 이용해 주세요."
         } else {
-            alertMessage = "예약되었습니다. 감사합니다."
+            if(registeredPrice != 0){
+                alertMessage = "예약되었습니다. 감사합니다."
+            } else {
+                alertMessage = "메뉴를 선택해 주세요."
+            }
         }
 
         self.selectedDate.text = DateInFormat
@@ -231,6 +247,7 @@ open class OrderViewController: UIViewController, UIPickerViewDataSource, UIPick
             selectedRecord.reloadData()
         }
     }
+    
     public func countSum() -> Int64{
         var countSum : Int64 = Int64(self.countData!)!
         for i in 0..<registeredCount.count{
@@ -238,12 +255,12 @@ open class OrderViewController: UIViewController, UIPickerViewDataSource, UIPick
         }
         return countSum
     }
+    
     public func countAlert(){
         let alert = UIAlertController(title: "공지", message: "예약은 총 4잔으로 제한됩니다.", preferredStyle: UIAlertControllerStyle.alert)
         let list : OrderListService = OrderListService()
         var orderMenuString: String = ""
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-        
         self.present(alert, animated: true, completion: nil)
     }
     
