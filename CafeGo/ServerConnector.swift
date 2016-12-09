@@ -10,7 +10,7 @@ import Foundation
 import SocketIO
 import AudioToolbox
 
-let serverURL:String = "http://192.168.41.122:8000/"
+let serverURL:String = "http://192.168.40.22:8000/"
 
 class ServerConnector {
     //    var counter = 0
@@ -47,6 +47,21 @@ class ServerConnector {
             tree.categoryMenu(tree.root)
             //            self.idx = data as? String;
         }
+        
+        socket.on("waitingStatus") {data, ack in
+            print("!!!!!!!waitingStatus!!!!!!")
+            print("명지카페 : \(data[0])")  //명지카페 대기순
+            print("그라지에 : \(data[1])")  //그라지에 대기순
+            print("그라지에3 : \(data[2])")  //그라지에3 대기순
+            //            item.category = (waitingStatus(forKey: "category") as! Int?)!
+        }
+        
+        socket.on("soldOut") {data, ack in
+            print("!!!!!!!soldOut!!!!!!")
+            print("판매완료")
+        }
+
+        
         socket.on("orderSuccess"){data, ack in
             print("!!!!!!!orderSuccess!!!!!!")
             print(data[0])

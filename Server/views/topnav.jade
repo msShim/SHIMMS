@@ -8,8 +8,16 @@
       a.navbar-brand(href="/") CafeGo
     #myNavbar.collapse.navbar-collapse
       ul.nav.navbar-nav.navbar-left
-        li
-          a(href="/orders") 주문 현황
+        li.dropdown
+          a.dropdown-toggle(href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false") 주문관리
+            b.icon-angle-down
+          ul.dropdown-menu
+            li
+              a(href="/orders/cafe1") 명지카페
+            li
+              a(href="/orders/cafe2") 그라지에
+            li
+              a(href="/orders/cafe3") 그라지에3
         li
           a(href="/scores") 평점 보기
         li.dropdown
@@ -40,11 +48,11 @@
         //-       ul.dropdown-menu
         //-         li
         //-           a(href="/users/") 회원 목록 관리
-      ul.nav.navbar-nav.navbar-right
-        li
-          a(href='') Signin
-        li
-          a(href='') Signup
+      //- ul.nav.navbar-nav.navbar-right
+      //-   li
+      //-     a(href='') Signin
+      //-   li
+      //-     a(href='') Signup
         //- if (!currentUser) 
         //-   li
         //-     a(href='/signin') Signin
