@@ -14,6 +14,33 @@ router.get('/', function(req, res, next) {
   });
 });
 
+router.get('/cafe1', function(req, res, next) {
+  Score.find({cafeID : 1}, function(err, scores){
+    if(err) {
+      return next(err);
+    }
+    return res.render('score/list', { scores: scores });
+  });
+});
+
+router.get('/cafe2', function(req, res, next) {
+  Score.find({cafeID : 2}, function(err, scores){
+    if(err) {
+      return next(err);
+    }
+    return res.render('score/list', { scores: scores });
+  });
+});
+
+router.get('/cafe3', function(req, res, next) {
+  Score.find({cafeID : 3}, function(err, scores){
+    if(err) {
+      return next(err);
+    }
+    return res.render('score/list', { scores: scores });
+  });
+});
+
 // router.get('/test', function(req, res, next) {
 //   console.log('test 덧글 진입');
 //   var newScore = new Score({

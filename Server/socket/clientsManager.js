@@ -34,14 +34,33 @@ function Client(socket) {
     var newScore = new Score({
       phoneNum: score[0],
       text: score[1],
-      score: parseInt(score[2])
+      score: parseInt(score[2]),
+      cafeID: parseInt(score[3])
     });
     newScore.save(function(err){
       if(err) {
         console.log('덧글 등록 에러');
-        return
+        return;
       }
       console.log('덧글 등록 성공!');
+      Score.find({cafeID : parseInt(score[3])},function(err, scores){
+        if(err) {
+          return;
+        }
+        self.socket.emit('receiveScore', scores);
+        console.log('덧글 전송 성공!');
+      });
+    });
+  });
+
+  this.socket.on("receiveScore", function(cafeID) {
+    console.log("getScore" + cafeID);
+    Score.find({cafeID : cafeID},function(err, scores){
+      if(err) {
+        return;
+      }
+      self.socket.emit('receiveScore', scores);
+      console.log('덧글 전송 성공!');
     });
   });
 
@@ -120,6 +139,12 @@ function Client(socket) {
   this.socket.on('soldOut', function(){
     console.log('soldOut');
     self.socket.emit('soldOut', "");
+
+  });
+
+  this.socket.on('cancel', function(){
+    console.log('cancel');
+    self.socket.emit('cancel', "");
 
   });
 

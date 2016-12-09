@@ -18,8 +18,16 @@
               a(href="/orders/cafe2") 그라지에
             li
               a(href="/orders/cafe3") 그라지에3
-        li
-          a(href="/scores") 평점 보기
+        li.dropdown
+          a.dropdown-toggle(href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false") 평점 보기
+            b.icon-angle-down
+          ul.dropdown-menu
+            li
+              a(href="/scores/cafe1") 명지카페
+            li
+              a(href="/scores/cafe2") 그라지에
+            li
+              a(href="/scores/cafe3") 그라지에3
         li.dropdown
           a.dropdown-toggle(href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false") 상품관리
             b.icon-angle-down

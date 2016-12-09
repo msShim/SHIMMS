@@ -94,7 +94,7 @@ class GraMoreViewController: UIViewController, UIPickerViewDelegate, UITableView
         
         registeredStar.append(self.starData)
         registeredText.append(self.textfield.text!)
-        ServerManager.sendScore(star: self.starData, text: self.textfield.text!)
+        ServerManager.sendScore(star: self.starData, text: self.textfield.text!, cafeID: "2")
         textfield.text?.removeAll()
         self.tableView.reloadData()
         

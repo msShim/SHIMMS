@@ -60,6 +60,26 @@ class ServerConnector {
             print("!!!!!!!soldOut!!!!!!")
             print("판매완료")
         }
+        
+        socket.on("cancel") {data, ack in
+            print("!!!!!!!cancel!!!!!!")
+            print("주문 취소당함")
+        }
+        
+        socket.on("receiveScore"){data, ack in
+            print("!!!!!!!receiveScore!!!!!!")
+            let scores = data[0] as? NSMutableArray
+            for score in scores! {
+                let temp = score as! NSDictionary
+                print("이 덧글의 phoneNum은 \(temp.value(forKey: "phoneNum")) 입니다.")      //temp에 키를 검색해서 접근함
+                print("이 덧글의 text는 \(temp.value(forKey: "text")) 입니다.")      //temp에 키를 검색해서 접근함
+                print("이 덧글의 score는 \(temp.value(forKey: "score")) 입니다.")      //temp에 키를 검색해서 접근함
+                print("이 덧글의 createAt은 \(temp.value(forKey: "createAt")) 입니다.")      //temp에 키를 검색해서 접근함
+                print("이 덧글의 cafeID은 \(temp.value(forKey: "cafeID")) 입니다.")      //temp에 키를 검색해서 접근함
+            }
+
+        }
+        
 
         
         socket.on("orderSuccess"){data, ack in
@@ -126,7 +146,7 @@ class ServerConnector {
         self.socket.emit("sendPhoneNum", status.getOrderList().phoneNumber!)
     }
     
-    func sendScore(star:String, text:String){
+    func sendScore(star:String, text:String, cafeID:String){
         print("리뷰전송")
         var score:String
         switch star {
@@ -152,8 +172,17 @@ class ServerConnector {
         data.append(status.getOrderList().phoneNumber!)
         data.append(text)
         data.append(score)
+        data.append(cafeID)
         self.socket.emit("sendScore", data)
     }
+    
+    func requestScore(cafeID:String) {
+        //명지카페 = 1, 그라지에 = 2, 그라지에3 = 3
+        
+        print("카페 덧글 요청");
+        self.socket.emit("sendOrder", cafeID);
+    }
+
     
     func sendOrder(phoneNum:String, time:String, productName:String, productCnt:String, total:Int64, cafeName:String) {
         
