@@ -140,7 +140,7 @@ class ServerConnector {
         self.socket.emit("sendScore", data)
     }
     
-    func sendOrder(phoneNum:String, time:String, productName:String, productCnt:String, total:Int64) {
+    func sendOrder(phoneNum:String, time:String, productName:String, productCnt:String, total:Int64, cafeName:String) {
         
         // var data = Order(phoneNum: phoneNum, time: time, productName: productName, productCnt: productCnt)
         var data:[String] = []
@@ -149,6 +149,7 @@ class ServerConnector {
         data.append(productName)
         data.append(productCnt)
         data.append(String(total))
+        data.append(cafeName)
         
         self.socket.emit("sendOrder", data)
     }
