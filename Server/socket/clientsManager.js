@@ -20,6 +20,8 @@ function Client(socket) {
         return;
       }
       self.socket.emit('connectSuccess', products);
+      self.manager.io.emit('waitingStatus', self.manager.ordersCafe1.length, self.manager.ordersCafe2.length, self.manager.ordersCafe3.length);
+
     });
     console.log("send to connectSuccess");
   };
@@ -134,6 +136,10 @@ function Client(socket) {
         self.manager.io.emit('waitingStatus', self.manager.ordersCafe1.length, self.manager.ordersCafe2.length, self.manager.ordersCafe3.length);
       });
     });
+  });
+
+  this.socket.on('requestWaitingNum', function(){
+    self.manager.io.emit('waitingStatus', self.manager.ordersCafe1.length, self.manager.ordersCafe2.length, self.manager.ordersCafe3.length);
   });
 
   this.socket.on('soldOut', function(){

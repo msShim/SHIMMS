@@ -10,7 +10,7 @@ import Foundation
 import SocketIO
 import AudioToolbox
 
-let serverURL:String = "http://192.168.41.12:8000/"
+let serverURL:String = "http://192.168.40.22:8000/"
 
 class ServerConnector {
     //    var counter = 0
@@ -50,13 +50,7 @@ class ServerConnector {
         
         socket.on("waitingStatus") {data, ack in
             print("!!!!!!!waitingStatus!!!!!!")
-            
-            let temp = data as! NSData
-//            Mwait = temp.value(forKey: "") as! String
-//            Gwait = data[1] as! String
-//            G3wait = data[2] as! String
-//            self.mainView?.setWaitingNumber()
-            
+                        
             print("이거 불려짐?")
             print("명지카페 : \(data[0])")  //명지카페 대기순
             print("그라지에 : \(data[1])")  //그라지에 대기순
@@ -165,6 +159,7 @@ class ServerConnector {
         print("대기인원요청")
         self.socket.emit("requestWaitingNum")
     }
+    
     func sendPhoneNum(){
         print("폰번호전송")
         self.socket.emit("sendPhoneNum", status.getOrderList().phoneNumber!)
