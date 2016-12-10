@@ -71,6 +71,49 @@ function Client(socket) {
     });
   });
 
+  this.socket.on('deleteReserve', function(data){
+    console.log('deleteReserve ' + data);
+    Order.findOne({orderCnt : parseInt(data)}, function(err, order){
+      if(err){
+        console.log('주문 검색 에러');
+        return;
+      }
+      var i;
+      console.log('cafeID : ' + order.cafeID);
+      if(order.cafeID == 1){
+        console.log('명지카페');
+        for(i in self.manager.ordersCafe1){
+          if(self.manager.ordersCafe1[i].orderCnt == data){
+            self.manager.ordersCafe1.splice(i, 1);
+            console.log('삭제함 1');
+            break;
+          }
+        }
+      }
+      else if(order.cafeID == 2){
+        console.log('그라지에');
+        for(i in self.manager.ordersCafe2){
+          if(self.manager.ordersCafe2[i].orderCnt == data){
+            self.manager.ordersCafe2.splice(i, 1);
+            console.log('삭제함 2');
+            break;
+          }
+        }
+      }
+      else {
+        console.log('그라지에3');
+        for(i in self.manager.ordersCafe3){
+          if(self.manager.ordersCafe3[i].orderCnt == data){
+            self.manager.ordersCafe3.splice(i, 1);
+            console.log('삭제함 3');
+            break;
+          }
+        }
+      }
+      self.manager.io.emit('waitingStatus', self.manager.ordersCafe1.length, self.manager.ordersCafe2.length, self.manager.ordersCafe3.length);
+    });
+  });
+
   this.socket.on("sendOrder", function(data){
     console.log(data);
     var productNames = data[2].split('|');

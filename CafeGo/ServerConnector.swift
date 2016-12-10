@@ -190,7 +190,7 @@ class ServerConnector {
     func deleteReserve(View:ReservationViewController){
         print("예약취소")
         reserveView = View
-        self.socket.emit("deleteReserve", status.getOrderList().phoneNumber!)
+        self.socket.emit("deleteReserve", String(status.getOrderList().mCafeNumber))
     }
     func sendScore(star:String, text:String, cafeID:String){
         print("리뷰전송")
