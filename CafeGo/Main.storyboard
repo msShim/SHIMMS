@@ -3397,9 +3397,9 @@
         <image name="waiting" width="750" height="80"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nR1-e1-Vyk"/>
-        <segue reference="j5T-Ck-S3q"/>
+        <segue reference="ry7-65-ppR"/>
         <segue reference="e1d-xo-Ubp"/>
+        <segue reference="j5T-Ck-S3q"/>
         <segue reference="CCx-Ui-aJU"/>
         <segue reference="jAd-V6-i5F"/>
     </inferredMetricsTieBreakers>
