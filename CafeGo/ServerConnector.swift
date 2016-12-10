@@ -10,7 +10,7 @@ import Foundation
 import SocketIO
 import AudioToolbox
 
-let serverURL:String = "http://192.168.41.12:8000/"
+let serverURL:String = "http://192.168.40.22:8000/"
 
 class ServerConnector {
     //    var counter = 0
@@ -23,20 +23,6 @@ class ServerConnector {
     var viewController:UIViewController?
     func addHandlers()
     {
-        var menu:Int = 0;
-        self.socket.on("waitingStatus") {data, ack in
-            print("!waitingStatus!!!!!!")
-            
-            Mwait = (data[0] as AnyObject).int64Value
-            Gwait = (data[1] as AnyObject).int64Value
-            G3wait = (data[2] as AnyObject).int64Value
-            
-            print("명지카페 : \(data[0])")  //명지카페 대기순
-            print("그라지에 : \(data[1])")  //그라지에 대기순
-            print("그라지에3 : \(data[2])")  //그라지에3 대기순
-//
-            //            item.category = (waitingStatus(forKey: "category") as! Int?)!
-        }
         socket.on("connectSuccess") {data, ack in
             print("!!!!!!!connectSuccess!!!!!!")
             print(data)
@@ -242,6 +228,7 @@ class ServerConnector {
         print("카페 덧글 요청");
         self.socket.emit("sendOrder", cafeID);
     }
+    
     func sendOrder(phoneNum:String, time:String, productName:String, productCnt:String, total:Int64, cafeName:String) {
         
         // var data = Order(phoneNum: phoneNum, time: time, productName: productName, productCnt: productCnt)

@@ -19,9 +19,14 @@ function Client(socket) {
         console.log('db err');
         return;
       }
-      self.socket.emit('connectSuccess', products);
-      self.manager.io.emit('waitingStatus', self.manager.ordersCafe1.length, self.manager.ordersCafe2.length, self.manager.ordersCafe3.length);
-
+      Score.find({}, function(err, scores){
+        if(err){
+          return;
+        }
+        self.socket.emit('connectSuccess', products);
+        self.manager.io.emit('waitingStatus', self.manager.ordersCafe1.length, self.manager.ordersCafe2.length, self.manager.ordersCafe3.length);
+        self.socket.emit('receiveScore', scores);
+      });
     });
     console.log("send to connectSuccess");
   };
