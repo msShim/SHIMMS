@@ -78,6 +78,19 @@ class StatusService {
         orderList.update(updatedStatus: number)
         self.saveChanges()
     }
+    func updateMCupon(order:String){
+        let number = getOrderList()
+        
+        number.mCoupon = order
+        orderList.update(updatedStatus: number)
+        self.saveChanges()
+    }
+    func updateGCupon(order:String){
+        let number = getOrderList()
+        number.gCoupon = order
+        orderList.update(updatedStatus: number)
+        self.saveChanges()
+    }
     func updateOrderBook(book:Bool){
         let order = getOrderList()
         
