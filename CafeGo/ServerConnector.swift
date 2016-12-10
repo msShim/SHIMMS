@@ -10,7 +10,7 @@ import Foundation
 import SocketIO
 import AudioToolbox
 
-let serverURL:String = "http://192.168.40.22:8000/"
+let serverURL:String = "http://192.168.41.12:8000/"
 
 class ServerConnector {
     //    var counter = 0
@@ -50,6 +50,14 @@ class ServerConnector {
         
         socket.on("waitingStatus") {data, ack in
             print("!!!!!!!waitingStatus!!!!!!")
+            
+            let temp = data as! NSData
+//            Mwait = temp.value(forKey: "") as! String
+//            Gwait = data[1] as! String
+//            G3wait = data[2] as! String
+//            self.mainView?.setWaitingNumber()
+            
+            print("이거 불려짐?")
             print("명지카페 : \(data[0])")  //명지카페 대기순
             print("그라지에 : \(data[1])")  //그라지에 대기순
             print("그라지에3 : \(data[2])")  //그라지에3 대기순
@@ -69,8 +77,26 @@ class ServerConnector {
         socket.on("receiveScore"){data, ack in
             print("!!!!!!!receiveScore!!!!!!")
             let scores = data[0] as? NSMutableArray
+            var reple = Reple()
             for score in scores! {
                 let temp = score as! NSDictionary
+                if(temp.value(forKey: "cafeID") as! Int == 1){
+                    reple.Body = (temp.value(forKey: "text") as? String)!
+                    reple.CreatAt = (temp.value(forKey: "createAt") as? String)!
+                    reple.Score = String(describing: temp.value(forKey: "score") as? Int64)
+                    print(reple.Body)
+                    MReple.append(reple)
+                } else if (temp.value(forKey: "cafeID") as! Int == 2){
+                    reple.Body = (temp.value(forKey: "text") as? String)!
+                    reple.CreatAt = (temp.value(forKey: "createAt") as? String)!
+                    reple.Score = (temp.value(forKey: "score") as? String)!
+                    GReple.append(reple)
+                } else {
+                    reple.Body = (temp.value(forKey: "text") as? String)!
+                    reple.CreatAt = (temp.value(forKey: "createAt") as? String)!
+                    reple.Score = (temp.value(forKey: "score") as? String)!
+                    G3Reple.append(reple)
+                }
                 print("이 덧글의 phoneNum은 \(temp.value(forKey: "phoneNum")) 입니다.")      //temp에 키를 검색해서 접근함
                 print("이 덧글의 text는 \(temp.value(forKey: "text")) 입니다.")      //temp에 키를 검색해서 접근함
                 print("이 덧글의 score는 \(temp.value(forKey: "score")) 입니다.")      //temp에 키를 검색해서 접근함
@@ -79,8 +105,6 @@ class ServerConnector {
             }
 
         }
-        
-
         
         socket.on("orderSuccess"){data, ack in
             print("!!!!!!!orderSuccess!!!!!!")
@@ -137,7 +161,7 @@ class ServerConnector {
     //        var productName:String
     //        var productCnt:String
     //    }
-    func setWaitingNumber(Mainview : MainViewController){
+    func setWaitingNumber(){
         print("대기인원요청")
         self.socket.emit("requestWaitingNum")
     }
@@ -182,8 +206,6 @@ class ServerConnector {
         print("카페 덧글 요청");
         self.socket.emit("sendOrder", cafeID);
     }
-
-    
     func sendOrder(phoneNum:String, time:String, productName:String, productCnt:String, total:Int64, cafeName:String) {
         
         // var data = Order(phoneNum: phoneNum, time: time, productName: productName, productCnt: productCnt)

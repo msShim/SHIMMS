@@ -7,6 +7,10 @@
 
 import UIKit
 
+var Mwait:String = "0"
+var Gwait:String = "0"
+var G3wait:String = "0"
+
 class MainViewController: UIViewController {
 
     @IBOutlet weak var G3WaitingNumber: UILabel!
@@ -27,7 +31,8 @@ class MainViewController: UIViewController {
         promotionImage.frame.origin.y = 667
         promotionImage.contentMode = UIViewContentMode.scaleAspectFill
         self.setPromotion()
-        ServerManager.setWaitingNumber(Mainview: self)
+        ServerManager.setWaitingNumber()
+        setWaitingNumber()
         
         scrollView.addSubview(promotionImage)
         
@@ -67,29 +72,17 @@ class MainViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    func setWaitingNumber(mnumber : String, gnumber : String, g1number : String){
-        self.MWaitingNumber.text = mnumber
-        self.GWaitingNumber.text = gnumber
-        self.G3WaitingNumber.text = g1number
+    func setWaitingNumber(){
+        self.MWaitingNumber.text = Mwait
+        self.GWaitingNumber.text = Gwait
+        self.G3WaitingNumber.text = G3wait
     }
     @objc fileprivate func setPromotion(){
 //        // set current page number label
         self.promotionImage.image = UIImage(named: promotion[index])
-        print(promotion[index])
         index += 1
         if(index == promotion.count){
             index = 0
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

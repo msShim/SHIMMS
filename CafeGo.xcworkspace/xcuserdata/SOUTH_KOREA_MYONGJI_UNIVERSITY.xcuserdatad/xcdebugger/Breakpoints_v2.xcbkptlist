@@ -183,12 +183,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CafeGo/ServerConnector.swift"
-            timestampString = "502280922.321391"
+            timestampString = "503035715.827857"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
-            landmarkName = "setWaitingNumber(Mainview:)"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
+            landmarkName = "addHandlers()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -259,11 +259,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CafeGo/AppDelegate.swift"
-            timestampString = "502677185.532036"
+            timestampString = "503029416.595094"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "application(_:didFinishLaunchingWithOptions:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -281,6 +281,22 @@
             startingLineNumber = "75"
             endingLineNumber = "75"
             landmarkName = "order(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CafeGo/ServerConnector.swift"
+            timestampString = "503035517.599196"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "addHandlers()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

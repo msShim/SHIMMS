@@ -34,15 +34,15 @@ class MoreViewController: UIViewController, UIPickerViewDelegate, UITableViewDel
         self.starPicker.delegate = self
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        tableView.reloadData()
         self.textfield.delegate = self
+        
+        tableView.reloadData()
         starData = star[starPicker.selectedRow(inComponent:0)]
         //Looks for single or multiple taps.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(MoreViewController.dismissKeyboard))
         
         //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
         //tap.cancelsTouchesInView = false
-        
         view.addGestureRecognizer(tap)
 
     }
@@ -65,13 +65,13 @@ class MoreViewController: UIViewController, UIPickerViewDelegate, UITableViewDel
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return registeredStar.count
+        return MReple.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "starCell", for: indexPath) as! moreSelectedCell
-        cell.starlabel.text = registeredStar[indexPath.row]
-        cell.textlabel.text = registeredText[indexPath.row]
+        cell.starlabel.text = MReple[indexPath.row].Score
+        cell.textlabel.text = MReple[indexPath.row].Body
         return cell
     }
     
@@ -128,9 +128,13 @@ class MoreViewController: UIViewController, UIPickerViewDelegate, UITableViewDel
 //    }
     
     @IBAction func submit(_ sender: UIButton) {
-        
-        registeredStar.append(self.starData)
-        registeredText.append(self.textfield.text!)
+        var reple = Reple()
+        reple.Body = self.textfield.text!
+        reple.Score = self.starData
+        MReple.insert(reple, at: 0)
+//        reple?.CafeId = "1"
+//        reple?.CreatAt = ""
+//        reple?.Phone = status.getOrderList().phoneNumber
         ServerManager.sendScore(star: self.starData, text: self.textfield.text!, cafeID: "1")
         textfield.text?.removeAll()
         self.tableView.reloadData()

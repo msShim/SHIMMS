@@ -17,7 +17,9 @@ var gCoffeeAll:[Coffee] = []
 var gCoffee1:[Coffee] = []
 var gCoffee2:[Coffee] = []
 var gCoffee3:[Coffee] = []
-
+var MReple:[Reple] = []
+var GReple:[Reple] = []
+var G3Reple:[Reple] = []
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?

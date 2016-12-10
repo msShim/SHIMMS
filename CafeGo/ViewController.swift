@@ -6,7 +6,13 @@
 
 import UIKit
 import SocketIO
-
+public struct Reple {
+    var Phone: String?
+    var Body: String?
+    var Score: String?
+    var CreatAt: String?
+    var CafeId: String?
+}
 public let tree = RBTree<Int>()
 let status:StatusService = StatusService()
 
