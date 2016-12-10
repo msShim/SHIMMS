@@ -10,7 +10,7 @@ import Foundation
 import SocketIO
 import AudioToolbox
 
-let serverURL:String = "http://192.168.40.22:8000/"
+let serverURL:String = "http://192.168.41.12:8000/"
 
 class ServerConnector {
     //    var counter = 0
@@ -94,22 +94,36 @@ class ServerConnector {
             let scores = data[0] as? NSMutableArray
             var reple = Reple()
             for score in scores! {
+                var star:String?
+                
                 let temp = score as! NSDictionary
+                if(temp.value(forKey: "score") as? Int64 == 1){
+                    star = "★☆☆☆☆"
+                } else if(temp.value(forKey: "score") as? Int64 == 2){
+                    star = "★★☆☆☆"
+                } else if(temp.value(forKey: "score") as? Int64 == 3){
+                    star = "★★★☆☆"
+                } else if(temp.value(forKey: "score") as? Int64 == 4){
+                    star = "★★★★☆"
+                } else {
+                    star = "★★★★★"
+                }
                 if(temp.value(forKey: "cafeID") as! Int == 1){
                     reple.Body = (temp.value(forKey: "text") as? String)!
                     reple.CreatAt = (temp.value(forKey: "createAt") as? String)!
-                    reple.Score = String(describing: temp.value(forKey: "score") as? Int64)
+
+                    reple.Score = star
                     print(reple.Body)
                     MReple.append(reple)
                 } else if (temp.value(forKey: "cafeID") as! Int == 2){
                     reple.Body = (temp.value(forKey: "text") as? String)!
                     reple.CreatAt = (temp.value(forKey: "createAt") as? String)!
-                    reple.Score = (temp.value(forKey: "score") as? String)!
+                    reple.Score = star
                     GReple.append(reple)
                 } else {
                     reple.Body = (temp.value(forKey: "text") as? String)!
                     reple.CreatAt = (temp.value(forKey: "createAt") as? String)!
-                    reple.Score = (temp.value(forKey: "score") as? String)!
+                    reple.Score = star
                     G3Reple.append(reple)
                 }
                 print("이 덧글의 phoneNum은 \(temp.value(forKey: "phoneNum")) 입니다.")      //temp에 키를 검색해서 접근함
@@ -124,6 +138,7 @@ class ServerConnector {
         socket.on("orderSuccess"){data, ack in
             print("!!!!!!!orderSuccess!!!!!!")
             print(data[0])
+            
             let index:Int64 = (data[0] as AnyObject).int64Value
             status.updatemCafeNumber(order: index)
             //넣어
@@ -134,6 +149,7 @@ class ServerConnector {
             //            print("진동아 와라!")
             //            self.counter = 0
             //            self.timer = Timer.scheduledTimer(timeInterval: 0.6, target: self, selector: Selector("vibratePhone"), userInfo: nil, repeats: true)
+            
             AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
             let alert = UIAlertController(title: "예약하신 상품이 준비되었습니다.", message: "어서오세요", preferredStyle: UIAlertControllerStyle.alert)
             var orderMenuString: String = ""
@@ -192,6 +208,7 @@ class ServerConnector {
         reserveView = View
         self.socket.emit("deleteReserve", String(status.getOrderList().mCafeNumber))
     }
+    
     func sendScore(star:String, text:String, cafeID:String){
         print("리뷰전송")
         var score:String

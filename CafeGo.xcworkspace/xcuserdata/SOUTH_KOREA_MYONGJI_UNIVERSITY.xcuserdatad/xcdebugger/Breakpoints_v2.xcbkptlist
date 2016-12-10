@@ -183,11 +183,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CafeGo/ServerConnector.swift"
-            timestampString = "503061052.592442"
+            timestampString = "503068872.299339"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
             landmarkName = "ServerConnector"
             landmarkType = "3">
          </BreakpointContent>
