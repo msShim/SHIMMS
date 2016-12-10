@@ -10,7 +10,7 @@ import Foundation
 import SocketIO
 import AudioToolbox
 
-let serverURL:String = "http://192.168.40.22:8000/"
+let serverURL:String = "http://192.168.41.12:8000/"
 
 class ServerConnector {
     //    var counter = 0
@@ -19,11 +19,24 @@ class ServerConnector {
     var socket = SocketIOClient(socketURL: URL(string: serverURL)!)
     var products:NSMutableArray?
     var mainView:MainViewController?
+    var reserveView:ReservationViewController?
     var viewController:UIViewController?
     func addHandlers()
     {
         var menu:Int = 0;
-        
+        self.socket.on("waitingStatus") {data, ack in
+            print("!waitingStatus!!!!!!")
+            
+            Mwait = (data[0] as AnyObject).int64Value
+            Gwait = (data[1] as AnyObject).int64Value
+            G3wait = (data[2] as AnyObject).int64Value
+            
+            print("명지카페 : \(data[0])")  //명지카페 대기순
+            print("그라지에 : \(data[1])")  //그라지에 대기순
+            print("그라지에3 : \(data[2])")  //그라지에3 대기순
+//
+            //            item.category = (waitingStatus(forKey: "category") as! Int?)!
+        }
         socket.on("connectSuccess") {data, ack in
             print("!!!!!!!connectSuccess!!!!!!")
             print(data)
@@ -45,27 +58,49 @@ class ServerConnector {
                 tree.insert(item)
             }
             tree.categoryMenu(tree.root)
+
+            
             //            self.idx = data as? String;
         }
         
         socket.on("waitingStatus") {data, ack in
             print("!!!!!!!waitingStatus!!!!!!")
-                        
-            print("이거 불려짐?")
+            
+            Mwait = (data[0] as AnyObject).int64Value
+            Gwait = (data[1] as AnyObject).int64Value
+            G3wait = (data[2] as AnyObject).int64Value
+            
             print("명지카페 : \(data[0])")  //명지카페 대기순
             print("그라지에 : \(data[1])")  //그라지에 대기순
             print("그라지에3 : \(data[2])")  //그라지에3 대기순
             //            item.category = (waitingStatus(forKey: "category") as! Int?)!
+            self.mainView?.setWaitingNumber()
+            self.mainView?.reloadInputViews()
         }
         
         socket.on("soldOut") {data, ack in
             print("!!!!!!!soldOut!!!!!!")
             print("판매완료")
+            
+            for _ in 0..<status.orderList.getAll().count{
+                status.updateTime(order: "")
+                status.initOrder(order: "")
+                status.initQuantity(order: "")
+                status.updateOrderNumber(order: 0)
+                status.updateOrderBook(book: false)
+                status.updatemCafeNumber(order: 0)
+            }
         }
         
         socket.on("cancel") {data, ack in
             print("!!!!!!!cancel!!!!!!")
             print("주문 취소당함")
+            status.updateTime(order: "")
+            status.initOrder(order: "")
+            status.initQuantity(order: "")
+            status.updateOrderNumber(order: 0)
+            status.updateOrderBook(book: false)
+            status.updatemCafeNumber(order: 0)
         }
         
         socket.on("receiveScore"){data, ack in
@@ -155,8 +190,9 @@ class ServerConnector {
     //        var productName:String
     //        var productCnt:String
     //    }
-    func setWaitingNumber(){
+    func setWaitingNumber(Main:MainViewController){
         print("대기인원요청")
+        mainView = Main
         self.socket.emit("requestWaitingNum")
     }
     
@@ -165,6 +201,11 @@ class ServerConnector {
         self.socket.emit("sendPhoneNum", status.getOrderList().phoneNumber!)
     }
     
+    func deleteReserve(View:ReservationViewController){
+        print("예약취소")
+        reserveView = View
+        self.socket.emit("deleteReserve", status.getOrderList().phoneNumber!)
+    }
     func sendScore(star:String, text:String, cafeID:String){
         print("리뷰전송")
         var score:String

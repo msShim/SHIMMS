@@ -20,6 +20,7 @@ var gCoffee3:[Coffee] = []
 var MReple:[Reple] = []
 var GReple:[Reple] = []
 var G3Reple:[Reple] = []
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
@@ -35,7 +36,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.gray], for:.normal)
 //        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.red], for:.selected)
         
-
         ServerManager.connect()
         print("try connect")
         return true

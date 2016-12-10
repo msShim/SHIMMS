@@ -7,10 +7,6 @@
 
 import UIKit
 
-var Mwait:String = "0"
-var Gwait:String = "0"
-var G3wait:String = "0"
-
 class MainViewController: UIViewController {
 
     @IBOutlet weak var G3WaitingNumber: UILabel!
@@ -27,13 +23,11 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         promotionImage.frame.origin.y = 667
         promotionImage.contentMode = UIViewContentMode.scaleAspectFill
         self.setPromotion()
-        ServerManager.setWaitingNumber()
-        setWaitingNumber()
-        
+        ServerManager.setWaitingNumber(Main: self)
+        self.setWaitingNumber()
         scrollView.addSubview(promotionImage)
         
         scrollView.layoutSubviews()
@@ -48,8 +42,13 @@ class MainViewController: UIViewController {
         var b = promotionImage.frame.origin.y
         var c = promotionImage.frame.height
         var d = "되라"
-       
+        
     }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(true)
+//        ServerManager.setWaitingNumber(mainview: self)
+//        setWaitingNumber()
+//    }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         timer?.invalidate()
@@ -73,12 +72,13 @@ class MainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     func setWaitingNumber(){
-        self.MWaitingNumber.text = Mwait
-        self.GWaitingNumber.text = Gwait
-        self.G3WaitingNumber.text = G3wait
+        self.MWaitingNumber.text = String(Mwait)
+        self.GWaitingNumber.text = String(Gwait)
+        self.G3WaitingNumber.text = String(G3wait)
     }
     @objc fileprivate func setPromotion(){
-//        // set current page number label
+//  
+        // set current page number label
         self.promotionImage.image = UIImage(named: promotion[index])
         index += 1
         if(index == promotion.count){

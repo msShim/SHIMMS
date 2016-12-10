@@ -15,7 +15,7 @@ UITableViewDelegate{
     @IBOutlet weak var reservationLabel: UILabel!
     @IBAction func cancel(_ sender: AnyObject) {
         for _ in 0..<status.orderList.getAll().count{
-
+            ServerManager.deleteReserve(View: self)
             status.updateTime(order: "")
             status.initOrder(order: "")
             status.initQuantity(order: "")
@@ -26,6 +26,19 @@ UITableViewDelegate{
             
         }
         self.viewDidLoad()
+    }
+    func cancel(){
+        for _ in 0..<status.orderList.getAll().count{
+            
+            status.updateTime(order: "")
+            status.initOrder(order: "")
+            status.initQuantity(order: "")
+            status.updateOrderNumber(order: 0)
+            status.updateOrderBook(book: false)
+            status.updatemCafeNumber(order: 0)
+            orderNumber.text = ""
+            
+        }
     }
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var priceView: UILabel!

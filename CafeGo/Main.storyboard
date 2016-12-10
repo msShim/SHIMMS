@@ -738,7 +738,7 @@
                                         <rect key="frame" x="0.0" y="28" width="338" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QEo-ir-yNW" id="72G-YI-gcN">
-                                            <frame key="frameInset" width="337.5" height="43"/>
+                                            <frame key="frameInset" width="338" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PMw-6h-Z5W">
@@ -1427,7 +1427,7 @@
                                         <rect key="frame" x="0.0" y="28" width="338" height="68"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cks-UO-1Ga" id="XWc-rb-HnB">
-                                            <frame key="frameInset" width="337.5" height="67"/>
+                                            <frame key="frameInset" width="338" height="67"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wuF-cx-DQj">
@@ -1706,7 +1706,7 @@
             <objects>
                 <navigationController id="urq-Km-Rl8" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="cupon" image="cusmall" id="xd8-pS-oQ7"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="eRr-dm-snc">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eRr-dm-snc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1724,7 +1724,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sMb-0v-5xy" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Coffee" image="cof" selectedImage="cof" id="1Qw-8D-QPd"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="uAC-77-cg4">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uAC-77-cg4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1743,7 +1743,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CHu-xx-fYA" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Ade/Tea" image="tea" id="dnK-LM-7yy"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ISz-4A-Sie">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ISz-4A-Sie">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1762,7 +1762,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fKP-Hb-R5h" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Juice" image="juice" id="c9X-8J-MG0"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="fBQ-eN-kXp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fBQ-eN-kXp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1781,7 +1781,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LUS-KI-eiQ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Reply" image="reply" id="iOg-KD-EVS"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="xFQ-Dh-KZ5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xFQ-Dh-KZ5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1799,7 +1799,7 @@
             <objects>
                 <navigationController id="4gl-BJ-LDU" userLabel="Coffee" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Coffee" image="cof" id="XUT-Ac-GWA" userLabel="Coffee"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="M0b-Or-bHu">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="M0b-Or-bHu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1816,7 +1816,7 @@
             <objects>
                 <navigationController id="Fo6-LN-39u" userLabel="Juice" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Juice" image="juice" id="1MN-ZD-yyD" userLabel="Juice"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="fc9-wx-LNp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fc9-wx-LNp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1833,7 +1833,7 @@
             <objects>
                 <navigationController id="mks-uw-0CZ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="cupon" image="cumid" id="aH2-7u-w2h"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="E8w-Re-98j">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="E8w-Re-98j">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1850,7 +1850,7 @@
             <objects>
                 <navigationController title="Ade/Tea" id="pNf-5c-p86" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Ade/Tea" image="tea" id="WwT-PM-DB3"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="orb-LB-rD4">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="orb-LB-rD4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1922,7 +1922,7 @@
             <objects>
                 <navigationController id="BTs-zb-yAr" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Reply" image="reply" id="aRQ-Pj-LmZ"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="sb0-gu-0Fd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sb0-gu-0Fd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1960,7 +1960,7 @@
             <objects>
                 <navigationController id="WZO-tt-Ywp" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Coffee" image="cof" id="AM1-YX-r8K"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Q8A-yR-KdK">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Q8A-yR-KdK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1977,7 +1977,7 @@
             <objects>
                 <navigationController id="b83-Hb-SuO" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Reply" image="reply" id="sUO-jB-PFd"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="rum-gk-TNC">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rum-gk-TNC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2053,7 +2053,7 @@
                                         <rect key="frame" x="0.0" y="28" width="338" height="61"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LyG-yd-yt2" id="Mmr-UW-NSX">
-                                            <frame key="frameInset" width="337.5" height="60"/>
+                                            <frame key="frameInset" width="338" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="별점" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPk-9D-Jra">
@@ -2196,7 +2196,7 @@
             <objects>
                 <navigationController id="cEx-im-N7a" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Ade/Tea" image="tea" id="lqC-Ey-7Jc"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="aG5-sP-Na3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aG5-sP-Na3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2268,7 +2268,7 @@
             <objects>
                 <navigationController id="7HR-Tv-wEa" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Juice" image="juice" id="pQ0-t4-80O"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="JCh-Qe-Us5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JCh-Qe-Us5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2398,7 +2398,7 @@
                                         <rect key="frame" x="0.0" y="28" width="338" height="67"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="t0D-Di-4jX" id="95D-el-OrK">
-                                            <frame key="frameInset" width="337.5" height="66"/>
+                                            <frame key="frameInset" width="338" height="66"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="is7-AI-gQt">
@@ -3333,7 +3333,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mI4-SG-eEa" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="그라지에" id="cuh-0G-RdG"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Wct-da-8gn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wct-da-8gn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -3352,7 +3352,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vuJ-LJ-cfO" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="명지카페" id="Cz5-uN-bO7"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="UU1-7q-p5u">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UU1-7q-p5u">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

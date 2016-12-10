@@ -13,6 +13,11 @@ public struct Reple {
     var CreatAt: String?
     var CafeId: String?
 }
+
+var Mwait:Int64 = 0
+var Gwait:Int64 = 0
+var G3wait:Int64 = 0
+
 public let tree = RBTree<Int>()
 let status:StatusService = StatusService()
 
@@ -23,8 +28,6 @@ open class ViewController: UIViewController {
     override open func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.barTintColor = UIColor.black
-
-        
         if(status.getOrderList().verification == true){
             appDelegate.switchStartViewControllers()
         } else{

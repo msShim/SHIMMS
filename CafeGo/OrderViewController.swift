@@ -75,11 +75,16 @@ open class OrderViewController: UIViewController, UIPickerViewDataSource, UIPick
     @IBOutlet weak var selectedRecord: UITableView!
     
     @IBAction func order(_ sender: UIButton) {
-        if(registeredPrice != 0){
-            alertMessage = "예약되었습니다. 감사합니다."
+        if(status.getOrderList().orderBook == true){
+            alertMessage = "중복 예약은 불가합니다. 원하신다면 예약 취소 후 이용해 주세요."
         } else {
-            alertMessage = "메뉴를 선택해 주세요."
+            if(registeredPrice != 0){
+                alertMessage = "예약되었습니다. 감사합니다."
+            } else {
+                alertMessage = "메뉴를 선택해 주세요."
+            }
         }
+
         let alert = UIAlertController(title: "주문창", message: alertMessage, preferredStyle: UIAlertControllerStyle.alert)
         let list : OrderListService = OrderListService()
         var orderMenuString: String = ""
