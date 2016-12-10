@@ -10,7 +10,7 @@ import Foundation
 import SocketIO
 import AudioToolbox
 
-let serverURL:String = "http://192.168.41.12:8000/"
+let serverURL:String = "http://192.168.40.22:8000/"
 
 class ServerConnector {
     //    var counter = 0
@@ -67,7 +67,7 @@ class ServerConnector {
         socket.on("soldOut") {data, ack in
             print("!!!!!!!soldOut!!!!!!")
             print("판매완료")
-            
+            print("해당 주문 소속위치 : \(data[0])")
             for _ in 0..<status.orderList.getAll().count{
                 status.updateTime(order: "")
                 status.initOrder(order: "")

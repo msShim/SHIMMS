@@ -15,8 +15,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "255"
             endingLineNumber = "255"
-            landmarkName = "ProductAdapter"
-            landmarkType = "3">
+            landmarkName = "sendOrder(phoneNum:time:productName:productCnt:total:cafeName:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

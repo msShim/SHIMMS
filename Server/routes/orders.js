@@ -51,11 +51,13 @@ router.get('/soldOut/:orderCnt', function(req, res, next) {
       if(err) {
         return next(err);
       }
+      var cafeID;
       if(order.cafeID === 1){
         for(var i in clientsManager.ordersCafe1){
           if(clientsManager.ordersCafe1[i].cafeID = order.cafeID){
             console.log("제거");
             clientsManager.ordersCafe1.splice(i, 1);
+            cafeID= 1;
             break;
           }
         }
@@ -65,6 +67,7 @@ router.get('/soldOut/:orderCnt', function(req, res, next) {
           if(clientsManager.ordersCafe2[i].cafeID = order.cafeID){
             console.log("제거");
             clientsManager.ordersCafe2.splice(i, 1);
+            cafeID=2;
             break;
           }
         }
@@ -74,6 +77,7 @@ router.get('/soldOut/:orderCnt', function(req, res, next) {
           if(clientsManager.ordersCafe3[i].cafeID = order.cafeID){
             console.log("제거");
             clientsManager.ordersCafe3.splice(i, 1);
+            cafeID=3;
             break;
           }
         }
@@ -82,7 +86,7 @@ router.get('/soldOut/:orderCnt', function(req, res, next) {
         console.log(clientsManager.clients[j].phoneNum);
         if(clientsManager.clients[j].phoneNum.toString() == order.phoneNum){
           console.log('브래이크됨');
-          clientsManager.clients[j].socket.emit('soldOut');
+          clientsManager.clients[j].socket.emit('soldOut', cafeID);
           break;
         }
       }
