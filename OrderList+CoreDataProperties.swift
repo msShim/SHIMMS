@@ -26,7 +26,7 @@ extension OrderList {
     @NSManaged public var orderTime: String?
     @NSManaged public var phoneNumber: String?
     @NSManaged public var verification: Bool
-    @NSManaged public var mCoupon: String?
-    @NSManaged public var gCoupon: String?
+    @NSManaged public var mCoupon: String
+    @NSManaged public var gCoupon: String
 
 }

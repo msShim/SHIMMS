@@ -26,8 +26,9 @@ class MCouponView: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        let index = Int(status.getOrderList().mCoupon!)
-        for _ in 0 ..< index! {
+        print(status.getOrderList().mCoupon)
+        let index = Int(status.getOrderList().mCoupon!)!
+        for _ in 0 ..< index {
             self.myImages.append("stamp.png")
         }
         for i in 0 ..< myImages.count{
@@ -64,10 +65,6 @@ class MCouponView: UIViewController {
     
     public func addCoupon(){
         myImages.append("stamp.png")
-
-        let i = Int(status.getOrderList().mCoupon!)! + 1
-        status.updateMCupon(order: String(i))
-      
     }
 
     public func deleteCoupon(){ // 쿠폰 취소

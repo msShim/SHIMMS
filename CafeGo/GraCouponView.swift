@@ -24,12 +24,11 @@ class GraCouponView: UIViewController {
 
     }
     override func viewDidLoad() {
-        
-        for _ in 0..<couponCount {
-            myImages.append("stamp.png")
-        }
-        
         super.viewDidLoad()
+        let index = Int(status.getOrderList().gCoupon!)
+        for _ in 0 ..< index! {
+            self.myImages.append("stamp.png")
+        }
         for i in 0 ..< myImages.count{
             let myImage:UIImage = UIImage(named: myImages[i])!
             let myImageView:UIImageView = UIImageView()
@@ -40,6 +39,7 @@ class GraCouponView: UIViewController {
             myImageView.frame.size.height = imageHeight
             myImageView.frame.origin.x = xPosition
             myImageView.frame.origin.y = yPosition
+            
             scrollVIew.addSubview(myImageView)
             
             let spacer:CGFloat = 10
@@ -49,38 +49,35 @@ class GraCouponView: UIViewController {
             if(xPosition > 265){
                 yPosition+=imageHeight + spacer
                 xPosition = 30
+                scrollViewContentSize += imageHeight + spacer
             }
-            
             scrollVIew.contentSize.height = scrollViewContentSize
-            scrollVIew.contentSize.width = imageWidth
+            scrollVIew.contentSize.width = 300
         }
-    }
-    
-    public func makeCoupon(count: Int ){
-        couponCount = count
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     public func addCoupon(){
         myImages.append("stamp.png")
-        let i = couponCount + 1
-        couponCount = i
     }
     
     public func deleteCoupon(){ // 쿠폰 취소
         myImages.removeLast()
-        let i = couponCount - 1
-        couponCount = i
+        let i = Int(status.getOrderList().gCoupon!)! - 1
+        status.updateMCupon(order: String(i))
     }
     public func UseCoupon(){// 10장 사용
         if(myImages.count > 9){
             for _ in 0 ..< 10 {
                 myImages.removeLast()
             }
-            let i = couponCount - 10
-            couponCount = i
+            
+            let i = Int(status.getOrderList().gCoupon!)! - 10
+            status.updateMCupon(order: String(i))
         }
-    }}
+    }
+}

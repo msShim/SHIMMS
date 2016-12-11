@@ -31,6 +31,8 @@ open class ViewController: UIViewController {
         if(status.getOrderList().verification == true){
             appDelegate.switchStartViewControllers()
         } else{
+            status.updateMCupon(order: "0")
+            status.updateGCupon(order: "0")
             appDelegate.switchPreViewControllers()
         }
     }

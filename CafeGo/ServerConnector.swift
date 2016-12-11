@@ -10,7 +10,7 @@ import Foundation
 import SocketIO
 import AudioToolbox
 
-let serverURL:String = "http://192.168.40.22:8000/"
+let serverURL:String = "http://192.168.41.12:8000/"
 
 class ServerConnector {
     //    var counter = 0
@@ -68,6 +68,20 @@ class ServerConnector {
             print("!!!!!!!soldOut!!!!!!")
             print("판매완료")
             print("해당 주문 소속위치 : \(data[0])")
+            let cafeNum = (data[0] as AnyObject).int64Value
+            if(cafeNum == 1){
+                let number = Int(status.getOrderList().mCoupon!)! + 1
+                status.updateMCupon(order: String(number))
+            }
+            if(cafeNum == 3){
+                let number = Int(status.getOrderList().mCoupon!)! + 1
+                status.updateMCupon(order: String(number))
+            }
+            if(cafeNum == 2){
+                let number = Int(status.getOrderList().mCoupon!)! + 1
+                status.updateMCupon(order: String(number))
+            }
+            
             for _ in 0..<status.orderList.getAll().count{
                 status.updateTime(order: "")
                 status.initOrder(order: "")
@@ -76,6 +90,15 @@ class ServerConnector {
                 status.updateOrderBook(book: false)
                 status.updatemCafeNumber(order: 0)
             }
+            
+            let alert = UIAlertController(title: "맛있게 드세요.", message: "감사합니다.", preferredStyle: UIAlertControllerStyle.alert)
+            var okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default){
+                UIAlertAction in
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.switchStartViewControllers()
+            }
+            self.viewController?.present(alert, animated: true, completion: nil)
+            alert.addAction(okAction)
         }
         
         socket.on("cancel") {data, ack in
@@ -87,6 +110,15 @@ class ServerConnector {
             status.updateOrderNumber(order: 0)
             status.updateOrderBook(book: false)
             status.updatemCafeNumber(order: 0)
+            
+            let alert = UIAlertController(title: "주문 취소.", message: "문의 해보시기 바랍니다.", preferredStyle: UIAlertControllerStyle.alert)
+            var okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default){
+                UIAlertAction in
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.switchStartViewControllers()
+            }
+            self.viewController?.present(alert, animated: true, completion: nil)
+            alert.addAction(okAction)
         }
         
         socket.on("receiveScore"){data, ack in
@@ -156,7 +188,7 @@ class ServerConnector {
             var okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default){
                 UIAlertAction in
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                appDelegate.switchViewControllers()
+                appDelegate.switchStartViewControllers()
             }
             self.viewController?.present(alert, animated: true, completion: nil)
             alert.addAction(okAction)
