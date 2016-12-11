@@ -38,6 +38,7 @@ class Gra2OrderViewController:UIViewController, UIPickerViewDataSource, UIPicker
     var beverageData : String?
     var countData : String?
     var priceData : Int64?
+    var alertMessage:String?
     
     var a : String?
     var b : String?
@@ -67,6 +68,15 @@ class Gra2OrderViewController:UIViewController, UIPickerViewDataSource, UIPicker
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func order(_ sender: UIButton) {
+        if(status.getOrderList().orderBook == true){
+            alertMessage = "중복 예약은 불가합니다. 원하신다면 예약 취소 후 이용해 주세요."
+        } else {
+            if(registeredPrice != 0){
+                alertMessage = "예약되었습니다. 감사합니다."
+            } else {
+                alertMessage = "메뉴를 선택해 주세요."
+            }
+        }
         let alert = UIAlertController(title: "주문창", message: "예약하고 튀면 듀금", preferredStyle: UIAlertControllerStyle.alert)
         let list : OrderListService = OrderListService()
         var orderMenuString: String = ""
@@ -98,6 +108,15 @@ class Gra2OrderViewController:UIViewController, UIPickerViewDataSource, UIPicker
     override open func viewDidLoad() {
         
         super.viewDidLoad()
+        if(status.getOrderList().orderBook == true){
+            alertMessage = "중복 예약은 불가합니다. 원하신다면 예약 취소 후 이용해 주세요."
+        } else {
+            if(registeredPrice != 0){
+                alertMessage = "예약되었습니다. 감사합니다."
+            } else {
+                alertMessage = "메뉴를 선택해 주세요."
+            }
+        }
         //시간 설정.
         //        self.setTime()
         setMenuList()

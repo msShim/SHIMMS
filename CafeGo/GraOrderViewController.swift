@@ -44,7 +44,7 @@ class GraOrderViewController: UIViewController, UIPickerViewDataSource, UIPicker
     var c : String?
     
     var currentIdx = Int()
-    
+    var alertMessage:String = ""
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return selectionArr.count;
     }
@@ -67,7 +67,16 @@ class GraOrderViewController: UIViewController, UIPickerViewDataSource, UIPicker
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func order(_ sender: UIButton) {
-        let alert = UIAlertController(title: "주문창", message: "예약하고 튀면 듀금", preferredStyle: UIAlertControllerStyle.alert)
+        if(status.getOrderList().orderBook == true){
+            alertMessage = "중복 예약은 불가합니다. 원하신다면 예약 취소 후 이용해 주세요."
+        } else {
+            if(registeredPrice != 0){
+                alertMessage = "예약되었습니다. 감사합니다."
+            } else {
+                alertMessage = "메뉴를 선택해 주세요."
+            }
+        }
+        let alert = UIAlertController(title: "주문창", message: alertMessage, preferredStyle: UIAlertControllerStyle.alert)
         let list : OrderListService = OrderListService()
         var orderMenuString: String = ""
         var okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default){
@@ -100,6 +109,15 @@ class GraOrderViewController: UIViewController, UIPickerViewDataSource, UIPicker
         super.viewDidLoad()
         //시간 설정.
         //        self.setTime()
+            if(status.getOrderList().orderBook == true){
+                alertMessage = "중복 예약은 불가합니다. 원하신다면 예약 취소 후 이용해 주세요."
+            } else {
+                if(registeredPrice != 0){
+                    alertMessage = "예약되었습니다. 감사합니다."
+                } else {
+                    alertMessage = "메뉴를 선택해 주세요."
+                }
+            }
         setMenuList()
         
         var todaysDate:NSDate = NSDate()

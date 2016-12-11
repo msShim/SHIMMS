@@ -10,7 +10,7 @@ import Foundation
 import SocketIO
 import AudioToolbox
 
-let serverURL:String = "http://192.168.41.12:8000/"
+let serverURL:String = "http://192.168.41.25:8000/"
 
 class ServerConnector {
     //    var counter = 0
@@ -177,12 +177,7 @@ class ServerConnector {
         }
         
         socket.on("successCall"){data, ack in
-            //            print("!!!!!!!successCall!!!!!!")
-            //            print("진동아 와라!")
-            //            self.counter = 0
-            //            self.timer = Timer.scheduledTimer(timeInterval: 0.6, target: self, selector: Selector("vibratePhone"), userInfo: nil, repeats: true)
-            
-            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate) // 진동
             let alert = UIAlertController(title: "예약하신 상품이 준비되었습니다.", message: "어서오세요", preferredStyle: UIAlertControllerStyle.alert)
             var orderMenuString: String = ""
             var okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default){
