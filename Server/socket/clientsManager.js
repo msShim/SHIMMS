@@ -79,6 +79,7 @@ function Client(socket) {
         return;
       }
       var i;
+
       console.log('cafeID : ' + order.cafeID);
       if(order.cafeID == 1){
         console.log('명지카페');
@@ -110,7 +111,16 @@ function Client(socket) {
           }
         }
       }
-      self.manager.io.emit('waitingStatus', self.manager.ordersCafe1.length, self.manager.ordersCafe2.length, self.manager.ordersCafe3.length);
+      order.isCancel = true;
+      order.save(function(err){
+        if(err){
+          console.log("저장 에러");
+          return;
+        }
+        self.manager.io.emit('waitingStatus', self.manager.ordersCafe1.length,
+          self.manager.ordersCafe2.length, self.manager.ordersCafe3.length);
+      });
+
     });
   });
 
